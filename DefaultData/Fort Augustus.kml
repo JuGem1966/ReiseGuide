@@ -1,0 +1,2209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Fort Augustus</name>
+    <description>Konvertiert aus Google Takeout am 31.8.2026</description>
+    <Placemark>
+      <name>Dunvegan Castle</name>
+      <description>https://www.google.com/maps/place/Dunvegan+Castle/data=!4m2!3m1!1s0x488c4cfbbac48e43:0x156309ce64c91fc2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c4cfbbac48e43:0x156309ce64c91fc2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dunvegan+Castle/data=!4m2!3m1!1s0x488c4cfbbac48e43:0x156309ce64c91fc2</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.5900758,57.4484253,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dunvegan Castle</name>
+      <description>https://www.google.com/maps/place/Dunvegan+Castle/data=!4m2!3m1!1s0x488c4cfbbac48e43:0x156309ce64c91fc2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c4cfbbac48e43:0x156309ce64c91fc2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dunvegan+Castle/data=!4m2!3m1!1s0x488c4cfbbac48e43:0x156309ce64c91fc2</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.5900758,57.4484253,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Aberfeldy Watermill Bookshop &amp; Cafe</name>
+      <description>https://www.google.com/maps/place/Aberfeldy+Watermill+Bookshop+%26+Cafe/data=!4m2!3m1!1s0x4888a426aad211b5:0xbd024a6cce23dc6c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888a426aad211b5:0xbd024a6cce23dc6c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Aberfeldy+Watermill+Bookshop+%26+Cafe/data=!4m2!3m1!1s0x4888a426aad211b5:0xbd024a6cce23dc6c</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8672755,56.6194242,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Falls of Clyde Viewpoint</name>
+      <description>https://www.google.com/maps/place/Falls+of+Clyde+Viewpoint/data=!4m2!3m1!1s0x48880f18436c0eb3:0x7e55c9692cd60e9f</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48880f18436c0eb3:0x7e55c9692cd60e9f</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Falls+of+Clyde+Viewpoint/data=!4m2!3m1!1s0x48880f18436c0eb3:0x7e55c9692cd60e9f</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.780383,55.661695,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Inveraray Castle</name>
+      <description>https://www.google.com/maps/place/Inveraray+Castle/data=!4m2!3m1!1s0x48890d03af79634f:0xce5fed1d0a6fd8b1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48890d03af79634f:0xce5fed1d0a6fd8b1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Inveraray+Castle/data=!4m2!3m1!1s0x48890d03af79634f:0xce5fed1d0a6fd8b1</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.073508,56.2374587,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tobermory</name>
+      <description>https://www.google.com/maps/place/Tobermory/data=!4m2!3m1!1s0x488b8d510730b925:0xf70ea9b257f84dca</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488b8d510730b925:0xf70ea9b257f84dca</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Tobermory/data=!4m2!3m1!1s0x488b8d510730b925:0xf70ea9b257f84dca</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.0681543,56.622818,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>West Highland Museum</name>
+      <description>https://www.google.com/maps/place/West+Highland+Museum/data=!4m2!3m1!1s0x488eccab5954ac03:0xac1d7a1f12c307c1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eccab5954ac03:0xac1d7a1f12c307c1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/West+Highland+Museum/data=!4m2!3m1!1s0x488eccab5954ac03:0xac1d7a1f12c307c1</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.1110458,56.8176305,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Falls of Foyers</name>
+      <description>https://www.google.com/maps/place/Falls+of+Foyers/data=!4m2!3m1!1s0x488f16f6461accb1:0xbd6736ab9603541b</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f16f6461accb1:0xbd6736ab9603541b</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Falls+of+Foyers/data=!4m2!3m1!1s0x488f16f6461accb1:0xbd6736ab9603541b</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.4914019,57.2488588,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Royal Marine Hotel, Brora</name>
+      <description>https://www.google.com/maps/place/Royal+Marine+Hotel,+Brora/data=!4m2!3m1!1s0x48855e94a0d72443:0xbda9387b7ecfe7df</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48855e94a0d72443:0xbda9387b7ecfe7df</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Royal+Marine+Hotel,+Brora/data=!4m2!3m1!1s0x48855e94a0d72443:0xbda9387b7ecfe7df</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8481631,58.0121373,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Eilean na Mòine</name>
+      <description>Dumbledores grab
+
+https://www.google.com/maps/place/Eilean+na+M%C3%B2ine/data=!4m2!3m1!1s0x488ead23db71422d:0xdc9b2895b605b317</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ead23db71422d:0xdc9b2895b605b317</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Eilean+na+M%C3%B2ine/data=!4m2!3m1!1s0x488ead23db71422d:0xdc9b2895b605b317</value></Data>
+        <Data name="note"><value>Dumbledores grab</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-7.3463513,57.528497,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Great Glen Distillery - Scotlands Smallest Craft Distillery</name>
+      <description>https://www.google.com/maps/place/Great+Glen+Distillery+-+Scotlands+Smallest+Craft+Distillery/data=!4m2!3m1!1s0x488f1158e5eb64af:0xe2bfe9480dd130eb</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f1158e5eb64af:0xe2bfe9480dd130eb</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Great+Glen+Distillery+-+Scotlands+Smallest+Craft+Distillery/data=!4m2!3m1!1s0x488f1158e5eb64af:0xe2bfe9480dd130eb</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.478472867597499,57.33749536945808,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glen Ord</name>
+      <description>https://www.google.com/maps/place/Glen+Ord/data=!4m2!3m1!1s0x488f0bcd6139b091:0xea989a492edd5d4b</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f0bcd6139b091:0xea989a492edd5d4b</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glen+Ord/data=!4m2!3m1!1s0x488f0bcd6139b091:0xea989a492edd5d4b</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.4740469,57.52259,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Kelpies</name>
+      <description>https://www.google.com/maps/place/The+Kelpies/data=!4m2!3m1!1s0x48887977108eb923:0x3c856e4052cabcf7</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48887977108eb923:0x3c856e4052cabcf7</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Kelpies/data=!4m2!3m1!1s0x48887977108eb923:0x3c856e4052cabcf7</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7554986,56.0191363,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Parking lot</name>
+      <description>https://www.google.com/maps/place/Parking+lot/data=!4m2!3m1!1s0x4888fa15acba0603:0x35e7f18f9b8e9aad</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888fa15acba0603:0x35e7f18f9b8e9aad</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Parking+lot/data=!4m2!3m1!1s0x4888fa15acba0603:0x35e7f18f9b8e9aad</value></Data>
+        <Data name="source"><value>geocoded</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-2.1954087,57.1200913,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Capilla Tapas Restaurant</name>
+      <description>https://www.google.com/maps/place/Capilla+Tapas+Restaurant/data=!4m2!3m1!1s0x489abf6273851901:0x414a914b22773c5d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489abf6273851901:0x414a914b22773c5d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Capilla+Tapas+Restaurant/data=!4m2!3m1!1s0x489abf6273851901:0x414a914b22773c5d</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.5492910718637614,58.61214356476312,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Oban Seafood Hut.. (Green Shack)</name>
+      <description>https://www.google.com/maps/place/Oban+Seafood+Hut..+(Green+Shack)/data=!4m2!3m1!1s0x488967095b584edf:0x24bec947dba34c34</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488967095b584edf:0x24bec947dba34c34</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Oban+Seafood+Hut..+(Green+Shack)/data=!4m2!3m1!1s0x488967095b584edf:0x24bec947dba34c34</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.475288828576374,56.41251171787675,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Turus Mara - Staffa and Treshnish Isles Cruise-tours</name>
+      <description>https://www.google.com/maps/place/Turus+Mara+-+Staffa+and+Treshnish+Isles+Cruise-tours/data=!4m2!3m1!1s0x488b8d6e38bc0185:0xcd38b66a88f2fa6a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488b8d6e38bc0185:0xcd38b66a88f2fa6a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Turus+Mara+-+Staffa+and+Treshnish+Isles+Cruise-tours/data=!4m2!3m1!1s0x488b8d6e38bc0185:0xcd38b66a88f2fa6a</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.149681302064801,56.4817078344617,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Isle of Mull Cheese and Spirit</name>
+      <description>https://www.google.com/maps/place/Isle+of+Mull+Cheese+and+Spirit/data=!4m2!3m1!1s0x488bf2234fcb8b53:0xa1ed633cc8b1e37</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488bf2234fcb8b53:0xa1ed633cc8b1e37</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Isle+of+Mull+Cheese+and+Spirit/data=!4m2!3m1!1s0x488bf2234fcb8b53:0xa1ed633cc8b1e37</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.088270193289459,56.619774517707114,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Highland Woodturner Gift Shop</name>
+      <description>https://www.google.com/maps/place/The+Highland+Woodturner+Gift+Shop/data=!4m2!3m1!1s0x488e6d5906bf3b33:0x9adafa98564de59c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e6d5906bf3b33:0x9adafa98564de59c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Highland+Woodturner+Gift+Shop/data=!4m2!3m1!1s0x488e6d5906bf3b33:0x9adafa98564de59c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.582514055367651,57.840379803761856,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Badachro Inn</name>
+      <description>https://www.google.com/maps/place/The+Badachro+Inn/data=!4m2!3m1!1s0x488e7077c8676e87:0xe1fa3fbbbbbceaf2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e7077c8676e87:0xe1fa3fbbbbbceaf2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Badachro+Inn/data=!4m2!3m1!1s0x488e7077c8676e87:0xe1fa3fbbbbbceaf2</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.7248809,57.696936,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gairloch Beach (Gaineamh Mhòr)</name>
+      <description>https://www.google.com/maps/place/Gairloch+Beach+(Gaineamh+Mh%C3%B2r)/data=!4m2!3m1!1s0x488e6fe1d7fd465f:0x3abc04cc2fd1bc77</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e6fe1d7fd465f:0x3abc04cc2fd1bc77</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gairloch+Beach+(Gaineamh+Mh%C3%B2r)/data=!4m2!3m1!1s0x488e6fe1d7fd465f:0x3abc04cc2fd1bc77</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6874198,57.7164209,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Deer Museum</name>
+      <description>https://www.google.com/maps/place/Deer+Museum/data=!4m2!3m1!1s0x488e61f3ff3b5659:0x9d83a690da1ba056</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e61f3ff3b5659:0x9d83a690da1ba056</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Deer+Museum/data=!4m2!3m1!1s0x488e61f3ff3b5659:0x9d83a690da1ba056</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.5103307,57.5411181,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Loch Torridon Viewpoint</name>
+      <description>https://www.google.com/maps/place/Loch+Torridon+Viewpoint/data=!4m2!3m1!1s0x488e6366f1e475e7:0x367f8c29a2ed4395</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e6366f1e475e7:0x367f8c29a2ed4395</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Loch+Torridon+Viewpoint/data=!4m2!3m1!1s0x488e6366f1e475e7:0x367f8c29a2ed4395</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.564742486014732,57.5274569313948,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Shieldaig Pier</name>
+      <description>https://www.google.com/maps/place/Shieldaig+Pier/data=!4m2!3m1!1s0x488e7d0010e4f039:0x2dd3e94f58414123</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e7d0010e4f039:0x2dd3e94f58414123</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Shieldaig+Pier/data=!4m2!3m1!1s0x488e7d0010e4f039:0x2dd3e94f58414123</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6503884,57.5200994,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Kishorn Seafood Bar</name>
+      <description>https://www.google.com/maps/place/Kishorn+Seafood+Bar/data=!4m2!3m1!1s0x488e8f6053c88de9:0xf6253dbd1c65940</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e8f6053c88de9:0xf6253dbd1c65940</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Kishorn+Seafood+Bar/data=!4m2!3m1!1s0x488e8f6053c88de9:0xf6253dbd1c65940</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6007337,57.3990024,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Black Water Falls</name>
+      <description>https://www.google.com/maps/place/Black+Water+Falls/data=!4m2!3m1!1s0x488fa8c808333661:0x58260c7251a48276</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488fa8c808333661:0x58260c7251a48276</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Black+Water+Falls/data=!4m2!3m1!1s0x488fa8c808333661:0x58260c7251a48276</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.6777872,57.6370807,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Loch Glascarnoch Viewpoint</name>
+      <description>https://www.google.com/maps/place/Loch+Glascarnoch+Viewpoint/data=!4m2!3m1!1s0x488fad9047e2ee37:0x7c4f7dd02472ebfa</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488fad9047e2ee37:0x7c4f7dd02472ebfa</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Loch+Glascarnoch+Viewpoint/data=!4m2!3m1!1s0x488fad9047e2ee37:0x7c4f7dd02472ebfa</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.8110229,57.7004813,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Loch Droma Viewpoint</name>
+      <description>https://www.google.com/maps/place/Loch+Droma+Viewpoint/data=!4m2!3m1!1s0x488fad55dfe26e9b:0x4a5b003da19e2e32</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488fad55dfe26e9b:0x4a5b003da19e2e32</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Loch+Droma+Viewpoint/data=!4m2!3m1!1s0x488fad55dfe26e9b:0x4a5b003da19e2e32</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.907110072101448,57.727628923096894,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Scenic View Point</name>
+      <description>https://www.google.com/maps/place/Scenic+View+Point/data=!4m2!3m1!1s0x488e4f66fb6aaa93:0x6cb5716c91e7c3d6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e4f66fb6aaa93:0x6cb5716c91e7c3d6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Scenic+View+Point/data=!4m2!3m1!1s0x488e4f66fb6aaa93:0x6cb5716c91e7c3d6</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.156201013819795,57.77867532261404,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>An Teallach viewpoint</name>
+      <description>https://www.google.com/maps/place/An+Teallach+viewpoint/data=!4m2!3m1!1s0x488e4f005c2ad627:0x3d0717e8df81ecb2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e4f005c2ad627:0x3d0717e8df81ecb2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/An+Teallach+viewpoint/data=!4m2!3m1!1s0x488e4f005c2ad627:0x3d0717e8df81ecb2</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.1230819664192815,57.76012908326656,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gruinard Bay View Point</name>
+      <description>https://www.google.com/maps/place/Gruinard+Bay+View+Point/data=!4m2!3m1!1s0x488e6a8f866e4bdf:0xbd952cbae17d4591</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e6a8f866e4bdf:0xbd952cbae17d4591</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gruinard+Bay+View+Point/data=!4m2!3m1!1s0x488e6a8f866e4bdf:0xbd952cbae17d4591</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.471890167658896,57.852828538515034,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Inverewe Garden</name>
+      <description>https://www.google.com/maps/place/Inverewe+Garden/data=!4m2!3m1!1s0x488e6ebee3fffdf5:0x69e011c0a1bf82fc</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e6ebee3fffdf5:0x69e011c0a1bf82fc</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Inverewe+Garden/data=!4m2!3m1!1s0x488e6ebee3fffdf5:0x69e011c0a1bf82fc</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6025456,57.7757441,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Big Sand Beach</name>
+      <description>https://www.google.com/maps/place/Big+Sand+Beach/data=!4m2!3m1!1s0x488e71a01ebfd1d1:0x5ad9bcde4a8acd25</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e71a01ebfd1d1:0x5ad9bcde4a8acd25</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Big+Sand+Beach/data=!4m2!3m1!1s0x488e71a01ebfd1d1:0x5ad9bcde4a8acd25</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.7745401,57.739645,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Opinan Beach</name>
+      <description>https://www.google.com/maps/place/Opinan+Beach/data=!4m2!3m1!1s0x488e7b51a55f0e69:0xde49ef24a938931</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e7b51a55f0e69:0xde49ef24a938931</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Opinan+Beach/data=!4m2!3m1!1s0x488e7b51a55f0e69:0xde49ef24a938931</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.783333,57.6869661,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bealach na Gaoithe Viewpoint</name>
+      <description>https://www.google.com/maps/place/Bealach+na+Gaoithe+Viewpoint/data=!4m2!3m1!1s0x488e632f43aab4d9:0xcfb1921f462d2182</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e632f43aab4d9:0xcfb1921f462d2182</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Bealach+na+Gaoithe+Viewpoint/data=!4m2!3m1!1s0x488e632f43aab4d9:0xcfb1921f462d2182</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6347069,57.5661597,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sgurr na Stri</name>
+      <description>https://www.google.com/maps/place/Sgurr+na+Stri/data=!4m2!3m1!1s0x488c3cf453175d8d:0x4970f59f45576c73</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c3cf453175d8d:0x4970f59f45576c73</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Sgurr+na+Stri/data=!4m2!3m1!1s0x488c3cf453175d8d:0x4970f59f45576c73</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.140693,57.196151,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Brodie Castle</name>
+      <description>https://www.google.com/maps/place/Brodie+Castle/data=!4m2!3m1!1s0x4885789acec2b5dd:0xf4795a7d437b1165</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885789acec2b5dd:0xf4795a7d437b1165</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Brodie+Castle/data=!4m2!3m1!1s0x4885789acec2b5dd:0xf4795a7d437b1165</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7089562,57.5984505,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gearrannan Blackhouse Village</name>
+      <description>https://www.google.com/maps/place/Gearrannan+Blackhouse+Village/data=!4m2!3m1!1s0x4892713826f096fd:0xf95d565eadbc0c30</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4892713826f096fd:0xf95d565eadbc0c30</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gearrannan+Blackhouse+Village/data=!4m2!3m1!1s0x4892713826f096fd:0xf95d565eadbc0c30</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.7917318,58.2963356,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Springbank</name>
+      <description>https://www.google.com/maps/place/Springbank/data=!4m2!3m1!1s0x488a06eda8d53f81:0xf3ab456f9f0b4471</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488a06eda8d53f81:0xf3ab456f9f0b4471</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Springbank/data=!4m2!3m1!1s0x488a06eda8d53f81:0xf3ab456f9f0b4471</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.609285,55.4255296,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sorcha Bakery</name>
+      <description>https://www.google.com/maps/place/Sorcha+Bakery/data=!4m2!3m1!1s0x4889670019fca8ef:0xb2baee53fee7fbea</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889670019fca8ef:0xb2baee53fee7fbea</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Sorcha+Bakery/data=!4m2!3m1!1s0x4889670019fca8ef:0xb2baee53fee7fbea</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.4734067734221705,56.417310596329244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gorse Cafe at Comrie Croft</name>
+      <description>https://www.google.com/maps/place/Gorse+Cafe+at+Comrie+Croft/data=!4m2!3m1!1s0x48889b46a74762c5:0x10e47298858848c4</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48889b46a74762c5:0x10e47298858848c4</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gorse+Cafe+at+Comrie+Croft/data=!4m2!3m1!1s0x48889b46a74762c5:0x10e47298858848c4</value></Data>
+        <Data name="source"><value>manual</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9406043784938243,56.384688920891456,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crail Harbour Gallery &amp; Tearoom</name>
+      <description>https://www.google.com/maps/place/Crail+Harbour+Gallery+%26+Tearoom/data=!4m2!3m1!1s0x4886fc0275a451cd:0x264cdeaeea8f7411</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4886fc0275a451cd:0x264cdeaeea8f7411</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Crail+Harbour+Gallery+%26+Tearoom/data=!4m2!3m1!1s0x4886fc0275a451cd:0x264cdeaeea8f7411</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-2.627091,56.2579655,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>St Conan’s Kirk</name>
+      <description>https://www.google.com/maps/place/St+Conan%E2%80%99s+Kirk/data=!4m2!3m1!1s0x488914242c20631f:0x941ade6b3081563c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488914242c20631f:0x941ade6b3081563c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/St+Conan%E2%80%99s+Kirk/data=!4m2!3m1!1s0x488914242c20631f:0x941ade6b3081563c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0541237,56.3952737,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Leakey&apos;s Bookshop</name>
+      <description>https://www.google.com/maps/place/Leakey&apos;s+Bookshop/data=!4m2!3m1!1s0x488f715305b9f42f:0x874048da2c321661</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f715305b9f42f:0x874048da2c321661</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Leakey&apos;s+Bookshop/data=!4m2!3m1!1s0x488f715305b9f42f:0x874048da2c321661</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.229329239021953,57.48091211439613,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lannan Bakery</name>
+      <description>https://www.google.com/maps/place/Lannan+Bakery/data=!4m2!3m1!1s0x4887c72a2ce81ef9:0xdb9ed6e148106ff2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887c72a2ce81ef9:0xdb9ed6e148106ff2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Lannan+Bakery/data=!4m2!3m1!1s0x4887c72a2ce81ef9:0xdb9ed6e148106ff2</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2066873,55.9598011,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>EE-USK</name>
+      <description>https://www.google.com/maps/place/EE-USK/data=!4m2!3m1!1s0x4889670bb342f0ff:0x1b1ca8d63433af65</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889670bb342f0ff:0x1b1ca8d63433af65</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/EE-USK/data=!4m2!3m1!1s0x4889670bb342f0ff:0x1b1ca8d63433af65</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.474756,56.4148147,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Oban Chocolate Company</name>
+      <description>https://www.google.com/maps/place/Oban+Chocolate+Company/data=!4m2!3m1!1s0x4889670ae2b4ca73:0xc5c9982b7551dbf3</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889670ae2b4ca73:0xc5c9982b7551dbf3</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Oban+Chocolate+Company/data=!4m2!3m1!1s0x4889670ae2b4ca73:0xc5c9982b7551dbf3</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.4739273,56.4165357,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camusdarach Beach</name>
+      <description>https://www.google.com/maps/place/Camusdarach+Beach/data=!4m2!3m1!1s0x488c032e656d946d:0x2fd1e610704faeb3</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c032e656d946d:0x2fd1e610704faeb3</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Camusdarach+Beach/data=!4m2!3m1!1s0x488c032e656d946d:0x2fd1e610704faeb3</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.8488298,56.9580494,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Armadale Ferry Terminal</name>
+      <description>https://www.google.com/maps/place/Armadale+Ferry+Terminal/data=!4m2!3m1!1s0x488c1ebd325c346f:0x12d8741fa66a709c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c1ebd325c346f:0x12d8741fa66a709c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Armadale+Ferry+Terminal/data=!4m2!3m1!1s0x488c1ebd325c346f:0x12d8741fa66a709c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.8951506,57.0645073,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Girvan</name>
+      <description>https://www.google.com/maps/place/Girvan/data=!4m2!3m1!1s0x4862130dd6539633:0xd23f149866990fab</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4862130dd6539633:0xd23f149866990fab</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Girvan/data=!4m2!3m1!1s0x4862130dd6539633:0xd23f149866990fab</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.8553579,55.2413151,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tay Forest Park</name>
+      <description>https://www.google.com/maps/place/Tay+Forest+Park/data=!4m2!3m1!1s0x4888ae488e085cc5:0xe4e3136e9fbe3d14</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888ae488e085cc5:0xe4e3136e9fbe3d14</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Tay+Forest+Park/data=!4m2!3m1!1s0x4888ae488e085cc5:0xe4e3136e9fbe3d14</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9777782,56.6051393,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cairngorm Mountains</name>
+      <description>https://www.google.com/maps/place/Cairngorm+Mountains/data=!4m2!3m1!1s0x488f586aa2956001:0x9535edc8dd10179</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f586aa2956001:0x9535edc8dd10179</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Cairngorm+Mountains/data=!4m2!3m1!1s0x488f586aa2956001:0x9535edc8dd10179</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.6091899,57.0701736,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glen Moray Distillery Ltd</name>
+      <description>https://www.google.com/maps/place/Glen+Moray+Distillery+Ltd/data=!4m2!3m1!1s0x48850ae2ec8875e7:0x6d8277e23090bf57</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48850ae2ec8875e7:0x6d8277e23090bf57</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glen+Moray+Distillery+Ltd/data=!4m2!3m1!1s0x48850ae2ec8875e7:0x6d8277e23090bf57</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.3431721,57.6451022,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dowans Hotel &amp; Restaurant</name>
+      <description>https://www.google.com/maps/place/Dowans+Hotel+%26+Restaurant/data=!4m2!3m1!1s0x4885a48764b05501:0xd39e27ed085840e8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a48764b05501:0xd39e27ed085840e8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dowans+Hotel+%26+Restaurant/data=!4m2!3m1!1s0x4885a48764b05501:0xd39e27ed085840e8</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2323676,57.4664465,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Neist Point Lighthouse</name>
+      <description>Tierbeobachtung (Wale, Delphine)
+
+https://www.google.com/maps/place/Neist+Point+Lighthouse/data=!4m2!3m1!1s0x488c5483bc1702b9:0x78f53e09e127bc23</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c5483bc1702b9:0x78f53e09e127bc23</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Neist+Point+Lighthouse/data=!4m2!3m1!1s0x488c5483bc1702b9:0x78f53e09e127bc23</value></Data>
+        <Data name="note"><value>Tierbeobachtung (Wale, Delphine)</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.7882368,57.423388,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The House of Bruar</name>
+      <description>https://www.google.com/maps/place/The+House+of+Bruar/data=!4m2!3m1!1s0x4888ac29eb0f6a91:0xe637b5e650b0490</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888ac29eb0f6a91:0xe637b5e650b0490</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+House+of+Bruar/data=!4m2!3m1!1s0x4888ac29eb0f6a91:0xe637b5e650b0490</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9305236,56.7704962,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Torabhaig Distillery</name>
+      <description>https://www.google.com/maps/place/Torabhaig+Distillery/data=!4m2!3m1!1s0x488c1fb00787618d:0xe2a9ec99392dc1c4</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c1fb00787618d:0xe2a9ec99392dc1c4</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Torabhaig+Distillery/data=!4m2!3m1!1s0x488c1fb00787618d:0xe2a9ec99392dc1c4</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.8487638,57.1134921,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Broadford Village Car Park</name>
+      <description>lädäli
+
+https://www.google.com/maps/place/Broadford+Village+Car+Park/data=!4m2!3m1!1s0x488c27e29c186a7d:0x10e788f03d5c05ca</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c27e29c186a7d:0x10e788f03d5c05ca</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Broadford+Village+Car+Park/data=!4m2!3m1!1s0x488c27e29c186a7d:0x10e788f03d5c05ca</value></Data>
+        <Data name="note"><value>lädäli</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.9084747,57.2413792,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lochinver</name>
+      <description>https://www.google.com/maps/place/Lochinver/data=!4m2!3m1!1s0x488e2fb0393e76ad:0xaa341e9a235885d0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e2fb0393e76ad:0xaa341e9a235885d0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Lochinver/data=!4m2!3m1!1s0x488e2fb0393e76ad:0xaa341e9a235885d0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.2405774,58.1523908,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crannog at Garrison West</name>
+      <description>Seafood
+
+https://www.google.com/maps/place/Crannog+at+Garrison+West/data=!4m2!3m1!1s0x488eccab59276045:0x28125b876dfeaa12</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eccab59276045:0x28125b876dfeaa12</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Crannog+at+Garrison+West/data=!4m2!3m1!1s0x488eccab59276045:0x28125b876dfeaa12</value></Data>
+        <Data name="note"><value>Seafood</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.110697374396094,56.8174885309178,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Skye Turntable Ferry | Kylerhea</name>
+      <description>https://www.google.com/maps/place/Skye+Turntable+Ferry+%7C+Kylerhea/data=!4m2!3m1!1s0x488e99005ba32941:0xe46f4944e89601a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e99005ba32941:0xe46f4944e89601a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Skye+Turntable+Ferry+%7C+Kylerhea/data=!4m2!3m1!1s0x488e99005ba32941:0xe46f4944e89601a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.659852880174569,57.22771215551199,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Whitebridge Bar &amp; Restaurant</name>
+      <description>https://www.google.com/maps/place/Whitebridge+Bar+%26+Restaurant/data=!4m2!3m1!1s0x488f17c17035b823:0x2cc94a66b8b337f6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f17c17035b823:0x2cc94a66b8b337f6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Whitebridge+Bar+%26+Restaurant/data=!4m2!3m1!1s0x488f17c17035b823:0x2cc94a66b8b337f6</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.506091260059393,57.20311008904605,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>MacGregor&apos;s</name>
+      <description>https://www.google.com/maps/place/MacGregor&apos;s/data=!4m2!3m1!1s0x488f71531be4dbf1:0x919ef09e6151bcfd</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f71531be4dbf1:0x919ef09e6151bcfd</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/MacGregor&apos;s/data=!4m2!3m1!1s0x488f71531be4dbf1:0x919ef09e6151bcfd</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.228235,57.4806544,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Benriach Distillery</name>
+      <description>https://www.google.com/maps/place/Benriach+Distillery/data=!4m2!3m1!1s0x48850a0ca90faecf:0x5155531b2192cb50</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48850a0ca90faecf:0x5155531b2192cb50</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Benriach+Distillery/data=!4m2!3m1!1s0x48850a0ca90faecf:0x5155531b2192cb50</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2892122,57.6099527,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>ALDI</name>
+      <description>https://www.google.com/maps/place/ALDI/data=!4m2!3m1!1s0x48863b54f2e48cab:0x594e278093966421</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48863b54f2e48cab:0x594e278093966421</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/ALDI/data=!4m2!3m1!1s0x48863b54f2e48cab:0x594e278093966421</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.4426601,56.3961454,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Co-op Food - Pitlochry - West Moulin Road</name>
+      <description>https://www.google.com/maps/place/Co-op+Food+-+Pitlochry+-+West+Moulin+Road/data=!4m2!3m1!1s0x488602bd98b6e697:0x6d10bc20edc30b0c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488602bd98b6e697:0x6d10bc20edc30b0c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Co-op+Food+-+Pitlochry+-+West+Moulin+Road/data=!4m2!3m1!1s0x488602bd98b6e697:0x6d10bc20edc30b0c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7339241,56.7041833,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ledaig</name>
+      <description>https://www.google.com/maps/place/Ledaig/data=!4m2!3m1!1s0x488942dfdf51f363:0x891be2cca1a21b24</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488942dfdf51f363:0x891be2cca1a21b24</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Ledaig/data=!4m2!3m1!1s0x488942dfdf51f363:0x891be2cca1a21b24</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.3967969,56.4696428,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crofter&apos;s Kitchen Scourie</name>
+      <description>Sehr guter Seafood Shop
+
+https://www.google.com/maps/place/Crofter&apos;s+Kitchen+Scourie/data=!4m2!3m1!1s0x4891d50064fa7cdf:0xfc3f68d169b9e97</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4891d50064fa7cdf:0xfc3f68d169b9e97</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Crofter&apos;s+Kitchen+Scourie/data=!4m2!3m1!1s0x4891d50064fa7cdf:0xfc3f68d169b9e97</value></Data>
+        <Data name="note"><value>Sehr guter Seafood Shop</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.161182139711052,58.35074476401811,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cairngorm Mountain Coire Cas Car Park</name>
+      <description>https://www.google.com/maps/place/Cairngorm+Mountain+Coire+Cas+Car+Park/data=!4m2!3m1!1s0x4885f18f10f807ef:0x9b35573b3a7af652</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885f18f10f807ef:0x9b35573b3a7af652</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Cairngorm+Mountain+Coire+Cas+Car+Park/data=!4m2!3m1!1s0x4885f18f10f807ef:0x9b35573b3a7af652</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.6702331,57.133343,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Balblair</name>
+      <description>https://www.google.com/maps/place/Balblair/data=!4m2!3m1!1s0x488f91e46609738d:0x7748a59fc165bb86</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f91e46609738d:0x7748a59fc165bb86</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Balblair/data=!4m2!3m1!1s0x488f91e46609738d:0x7748a59fc165bb86</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.886443,57.5739629,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glen Nevis Restaurant</name>
+      <description>https://www.google.com/maps/place/Glen+Nevis+Restaurant/data=!4m2!3m1!1s0x4889333a4d94f9a3:0x3e9ce5d14e4a9446</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889333a4d94f9a3:0x3e9ce5d14e4a9446</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glen+Nevis+Restaurant/data=!4m2!3m1!1s0x4889333a4d94f9a3:0x3e9ce5d14e4a9446</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0696376,56.801955,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Skyfall</name>
+      <description>https://www.google.com/maps/place/Skyfall/data=!4m2!3m1!1s0x4889250026e0d10d:0x996ae657d0adf74c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889250026e0d10d:0x996ae657d0adf74c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Skyfall/data=!4m2!3m1!1s0x4889250026e0d10d:0x996ae657d0adf74c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.6379715,56.0955043,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glenlossie</name>
+      <description>https://www.google.com/maps/place/Glenlossie/data=!4m2!3m1!1s0x4885a08041f3c54b:0x7781dd5a4570f9a1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a08041f3c54b:0x7781dd5a4570f9a1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glenlossie/data=!4m2!3m1!1s0x4885a08041f3c54b:0x7781dd5a4570f9a1</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.3182956,57.5992139,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fyrish Monument Jubilee Path Car Park</name>
+      <description>https://www.google.com/maps/place/Fyrish+Monument+Jubilee+Path+Car+Park/data=!4m2!3m1!1s0x488f999ed64cfacf:0x778467325e7a1fb4</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f999ed64cfacf:0x778467325e7a1fb4</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Fyrish+Monument+Jubilee+Path+Car+Park/data=!4m2!3m1!1s0x488f999ed64cfacf:0x778467325e7a1fb4</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.305288973126334,57.71212117108302,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Wild Scottish Sauna - Kingsbarns</name>
+      <description>https://www.google.com/maps/place/Wild+Scottish+Sauna+-+Kingsbarns/data=!4m2!3m1!1s0x4886f9f477a3b17b:0x16f30b5825bc99e8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4886f9f477a3b17b:0x16f30b5825bc99e8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Wild+Scottish+Sauna+-+Kingsbarns/data=!4m2!3m1!1s0x4886f9f477a3b17b:0x16f30b5825bc99e8</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-2.6451787034495604,56.30332843902806,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Highland Crepe &amp; Coffee Co</name>
+      <description>https://www.google.com/maps/place/The+Highland+Crepe+%26+Coffee+Co/data=!4m2!3m1!1s0x488ed90031dacf6f:0xa1efbc87d700ac33</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ed90031dacf6f:0xa1efbc87d700ac33</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Highland+Crepe+%26+Coffee+Co/data=!4m2!3m1!1s0x488ed90031dacf6f:0xa1efbc87d700ac33</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.811673697501489,57.06951291898272,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Quiraing</name>
+      <description>https://www.google.com/maps/place/Quiraing/data=!4m2!3m1!1s0x488dcf0db7ac6bdb:0x81b757292026e587</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488dcf0db7ac6bdb:0x81b757292026e587</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Quiraing/data=!4m2!3m1!1s0x488dcf0db7ac6bdb:0x81b757292026e587</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.2741331,57.6397361,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Edradour</name>
+      <description>https://www.google.com/maps/place/Edradour/data=!4m2!3m1!1s0x488602dba3817fbb:0xb2a7e32089b82289</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488602dba3817fbb:0xb2a7e32089b82289</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Edradour/data=!4m2!3m1!1s0x488602dba3817fbb:0xb2a7e32089b82289</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.6993815,56.7021734,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Well of Seven Heads</name>
+      <description>https://www.google.com/maps/place/The+Well+of+Seven+Heads/data=!4m2!3m1!1s0x488ed976312b274d:0xe51f3384826c8794</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ed976312b274d:0xe51f3384826c8794</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Well+of+Seven+Heads/data=!4m2!3m1!1s0x488ed976312b274d:0xe51f3384826c8794</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7965897,57.0520471,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glen Affric</name>
+      <description>Wildtierbeobachtung
+
+https://www.google.com/maps/place/Glen+Affric/data=!4m2!3m1!1s0x488f1cebfe8ee04f:0xbcf71ab731b85384</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f1cebfe8ee04f:0xbcf71ab731b85384</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glen+Affric/data=!4m2!3m1!1s0x488f1cebfe8ee04f:0xbcf71ab731b85384</value></Data>
+        <Data name="note"><value>Wildtierbeobachtung</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.9990459,57.2636584,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Smoo Cave</name>
+      <description>https://www.google.com/maps/place/Smoo+Cave/data=!4m2!3m1!1s0x489039ee769909f5:0x950f6d3f93730074</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489039ee769909f5:0x950f6d3f93730074</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Smoo+Cave/data=!4m2!3m1!1s0x489039ee769909f5:0x950f6d3f93730074</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7198659,58.5638415,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Emily&apos;s Byre</name>
+      <description>https://www.google.com/maps/place/Emily&apos;s+Byre/data=!4m2!3m1!1s0x488ed9e7280c1701:0x7a8c8fb26bfcfcfa</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ed9e7280c1701:0x7a8c8fb26bfcfcfa</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Emily&apos;s+Byre/data=!4m2!3m1!1s0x488ed9e7280c1701:0x7a8c8fb26bfcfcfa</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.819169005894496,57.0685336464432,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Restaurant at Inverlochy Castle</name>
+      <description>https://www.google.com/maps/place/Restaurant+at+Inverlochy+Castle/data=!4m2!3m1!1s0x488ecd1f2a7edc7d:0xb449da681c0fc35d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ecd1f2a7edc7d:0xb449da681c0fc35d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Restaurant+at+Inverlochy+Castle/data=!4m2!3m1!1s0x488ecd1f2a7edc7d:0xb449da681c0fc35d</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0540276,56.8443661,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Iain Burnett Highland Chocolatier</name>
+      <description>https://www.google.com/maps/place/Iain+Burnett+Highland+Chocolatier/data=!4m2!3m1!1s0x4888a7958a10ea9d:0xb3e3a69a6d9c6926</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888a7958a10ea9d:0xb3e3a69a6d9c6926</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Iain+Burnett+Highland+Chocolatier/data=!4m2!3m1!1s0x4888a7958a10ea9d:0xb3e3a69a6d9c6926</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7748874440352824,56.657798664985215,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Loch Killin viewpoint</name>
+      <description>https://www.google.com/maps/place/Loch+Killin+viewpoint/data=!4m2!3m1!1s0x488f3d0005e09b61:0x4d0a062dd60aabfa</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f3d0005e09b61:0x4d0a062dd60aabfa</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Loch+Killin+viewpoint/data=!4m2!3m1!1s0x488f3d0005e09b61:0x4d0a062dd60aabfa</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.444528321822388,57.16934663943616,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glencoe Visitor Centre - National Trust for Scotland</name>
+      <description>https://www.google.com/maps/place/Glencoe+Visitor+Centre+-+National+Trust+for+Scotland/data=!4m2!3m1!1s0x488930d2075fa719:0xd8478ed030bf9d03</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488930d2075fa719:0xd8478ed030bf9d03</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glencoe+Visitor+Centre+-+National+Trust+for+Scotland/data=!4m2!3m1!1s0x488930d2075fa719:0xd8478ed030bf9d03</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0818637,56.671167,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Monster Fish &amp; Chips Co.</name>
+      <description>Fish &amp; Chips
+
+https://www.google.com/maps/place/Monster+Fish+%26+Chips+Co./data=!4m2!3m1!1s0x488f23d58391f2b1:0x8cf476e8e08d7bdb</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f23d58391f2b1:0x8cf476e8e08d7bdb</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Monster+Fish+%26+Chips+Co./data=!4m2!3m1!1s0x488f23d58391f2b1:0x8cf476e8e08d7bdb</value></Data>
+        <Data name="note"><value>Fish &amp; Chips</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.681608219310488,57.14632502623892,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Jaggy Thistle Food Stop</name>
+      <description>https://www.google.com/maps/place/Jaggy+Thistle+Food+Stop/data=!4m2!3m1!1s0x0:0x31b271e0c3bc5ac6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x0:0x31b271e0c3bc5ac6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Jaggy+Thistle+Food+Stop/data=!4m2!3m1!1s0x0:0x31b271e0c3bc5ac6</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7299686,57.0971384,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rose Street Retail Park</name>
+      <description>https://www.google.com/maps/place/Rose+Street+Retail+Park/data=!4m2!3m1!1s0x488f7152eed0d84f:0xfc88dcd3023f581e</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f7152eed0d84f:0xfc88dcd3023f581e</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Rose+Street+Retail+Park/data=!4m2!3m1!1s0x488f7152eed0d84f:0xfc88dcd3023f581e</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.226635689979224,57.4812292716589,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Skye Ferry</name>
+      <description>https://www.google.com/maps/place/Skye+Ferry/data=!4m2!3m1!1s0x488e997196802a7d:0x4744faf91f4d30dc</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e997196802a7d:0x4744faf91f4d30dc</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Skye+Ferry/data=!4m2!3m1!1s0x488e997196802a7d:0x4744faf91f4d30dc</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.6648779,57.2277566,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Highland Folk Museum</name>
+      <description>https://www.google.com/maps/place/Highland+Folk+Museum/data=!4m2!3m1!1s0x488f45066e708163:0x749b636ccac6aeaa</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f45066e708163:0x749b636ccac6aeaa</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Highland+Folk+Museum/data=!4m2!3m1!1s0x488f45066e708163:0x749b636ccac6aeaa</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1044481,57.0686996,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dunrobin Castle</name>
+      <description>https://www.google.com/maps/place/Dunrobin+Castle/data=!4m2!3m1!1s0x488ff56c3e55825f:0x96c224f848c0abbf</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ff56c3e55825f:0x96c224f848c0abbf</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dunrobin+Castle/data=!4m2!3m1!1s0x488ff56c3e55825f:0x96c224f848c0abbf</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9473688,57.9857817,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Morayvia</name>
+      <description>https://www.google.com/maps/place/Morayvia/data=!4m2!3m1!1s0x488576598fc91881:0x4f60f70f5c3e7ae0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488576598fc91881:0x4f60f70f5c3e7ae0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Morayvia/data=!4m2!3m1!1s0x488576598fc91881:0x4f60f70f5c3e7ae0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.5567893,57.6342903,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ben Nevis Bar</name>
+      <description>Live Musik
+
+https://www.google.com/maps/place/Ben+Nevis+Bar/data=!4m2!3m1!1s0x488eccab31b8b18d:0xb9f0b877f0bff6ed</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eccab31b8b18d:0xb9f0b877f0bff6ed</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Ben+Nevis+Bar/data=!4m2!3m1!1s0x488eccab31b8b18d:0xb9f0b877f0bff6ed</value></Data>
+        <Data name="note"><value>Live Musik</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.1131672,56.8169546,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Craigluscar Activities</name>
+      <description>Hoovercraft
+
+https://www.google.com/maps/place/Craigluscar+Activities/data=!4m2!3m1!1s0x4887d3b00a726ae5:0xace8ac2cb8f0f60b</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887d3b00a726ae5:0xace8ac2cb8f0f60b</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Craigluscar+Activities/data=!4m2!3m1!1s0x4887d3b00a726ae5:0xace8ac2cb8f0f60b</value></Data>
+        <Data name="note"><value>Hoovercraft</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.503867920420881,56.1011061053265,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Loch Morlich</name>
+      <description>https://www.google.com/maps/place/Loch+Morlich/data=!4m2!3m1!1s0x4885f46db4e20183:0x4690a244660e5f4d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885f46db4e20183:0x4690a244660e5f4d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Loch+Morlich/data=!4m2!3m1!1s0x4885f46db4e20183:0x4690a244660e5f4d</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7141974,57.1633251,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sealife Adventures</name>
+      <description>https://www.google.com/maps/place/Sealife+Adventures/data=!4m2!3m1!1s0x488bd87c8b9acf7b:0xf586aa8b71258cc8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488bd87c8b9acf7b:0xf586aa8b71258cc8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Sealife+Adventures/data=!4m2!3m1!1s0x488bd87c8b9acf7b:0xf586aa8b71258cc8</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.588436208231054,56.30804120480953,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Meall Fuar-mhonaidh</name>
+      <description>https://www.google.com/maps/place/Meall+Fuar-mhonaidh/data=!4m2!3m1!1s0x488f17685855650d:0x821f7532c4f7b6ac</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f17685855650d:0x821f7532c4f7b6ac</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Meall+Fuar-mhonaidh/data=!4m2!3m1!1s0x488f17685855650d:0x821f7532c4f7b6ac</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.5600412,57.2644067,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glen Affric Rd Parking</name>
+      <description>Wildtierbeobachtung
+
+https://www.google.com/maps/place/Glen+Affric+Rd+Parking/data=!4m2!3m1!1s0x488ee27008f536f3:0x9bdce23857cf9396</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ee27008f536f3:0x9bdce23857cf9396</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glen+Affric+Rd+Parking/data=!4m2!3m1!1s0x488ee27008f536f3:0x9bdce23857cf9396</value></Data>
+        <Data name="note"><value>Wildtierbeobachtung</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7997116,57.3224139,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bunnahabhain Distillery</name>
+      <description>https://www.google.com/maps/place/Bunnahabhain+Distillery/data=!4m2!3m1!1s0x488a48a34571c191:0xdb18796a2c9a77aa</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488a48a34571c191:0xdb18796a2c9a77aa</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Bunnahabhain+Distillery/data=!4m2!3m1!1s0x488a48a34571c191:0xdb18796a2c9a77aa</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.1269936,55.8829048,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mallaig Pool &amp; Leisure</name>
+      <description>https://www.google.com/maps/place/Mallaig+Pool+%26+Leisure/data=!4m2!3m1!1s0x488c1d107e81a715:0x3c5ccf056a7ebaf6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c1d107e81a715:0x3c5ccf056a7ebaf6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Mallaig+Pool+%26+Leisure/data=!4m2!3m1!1s0x488c1d107e81a715:0x3c5ccf056a7ebaf6</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.83133771293337,57.00036413913454,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Relish Portree</name>
+      <description>https://www.google.com/maps/place/Relish+Portree/data=!4m2!3m1!1s0x488c32327f9d7dc5:0x3d13ed2407fbce17</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c32327f9d7dc5:0x3d13ed2407fbce17</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Relish+Portree/data=!4m2!3m1!1s0x488c32327f9d7dc5:0x3d13ed2407fbce17</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.1924247,57.4127244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lochleven Seafood Café</name>
+      <description>seafood
+
+https://www.google.com/maps/place/Lochleven+Seafood+Caf%C3%A9/data=!4m2!3m1!1s0x48893138444fdb4b:0xa9aee886c3533a44</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48893138444fdb4b:0xa9aee886c3533a44</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Lochleven+Seafood+Caf%C3%A9/data=!4m2!3m1!1s0x48893138444fdb4b:0xa9aee886c3533a44</value></Data>
+        <Data name="note"><value>seafood</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0781075,56.7035061,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pitlochry</name>
+      <description>https://www.google.com/maps/place/Pitlochry/data=!4m2!3m1!1s0x4888ca938c42d579:0x7fe0d2d924311eff</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888ca938c42d579:0x7fe0d2d924311eff</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Pitlochry/data=!4m2!3m1!1s0x4888ca938c42d579:0x7fe0d2d924311eff</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7306846,56.701969,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mortlach</name>
+      <description>https://www.google.com/maps/place/Mortlach/data=!4m2!3m1!1s0x4885a55f0a440d2d:0xc1c642d54a66e99c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a55f0a440d2d:0xc1c642d54a66e99c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Mortlach/data=!4m2!3m1!1s0x4885a55f0a440d2d:0xc1c642d54a66e99c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.1227242,57.442591,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Boathouse Restaurant</name>
+      <description>https://www.google.com/maps/place/The+Boathouse+Restaurant/data=!4m2!3m1!1s0x488f23d5e67aec9b:0xa8e749927950eb34</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f23d5e67aec9b:0xa8e749927950eb34</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Boathouse+Restaurant/data=!4m2!3m1!1s0x488f23d5e67aec9b:0xa8e749927950eb34</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.6745894,57.1458303,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glenfiddich Distillery</name>
+      <description>https://www.google.com/maps/place/Glenfiddich+Distillery/data=!4m2!3m1!1s0x4885a55d09e3a6ab:0x8e2073b731c97b1c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a55d09e3a6ab:0x8e2073b731c97b1c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glenfiddich+Distillery/data=!4m2!3m1!1s0x4885a55d09e3a6ab:0x8e2073b731c97b1c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.1287432,57.4551119,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Falkirk Wheel</name>
+      <description>https://www.google.com/maps/place/Falkirk+Wheel/data=!4m2!3m1!1s0x48887af9dfabf5ad:0x34e14841b9062c59</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48887af9dfabf5ad:0x34e14841b9062c59</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Falkirk+Wheel/data=!4m2!3m1!1s0x48887af9dfabf5ad:0x34e14841b9062c59</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.841725,56.0003559,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>MonkeyFace Combat</name>
+      <description>Fabio
+
+https://www.google.com/maps/place/MonkeyFace+Combat/data=!4m2!3m1!1s0x488f6e6057b70813:0xe7b7ce146d131be6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f6e6057b70813:0xe7b7ce146d131be6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/MonkeyFace+Combat/data=!4m2!3m1!1s0x488f6e6057b70813:0xe7b7ce146d131be6</value></Data>
+        <Data name="note"><value>Fabio</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1972933312882175,57.35699984009188,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Newburgh seal beach</name>
+      <description>https://www.google.com/maps/place/Newburgh+seal+beach/data=!4m2!3m1!1s0x488475546dc26309:0x83fe7456b9283a0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488475546dc26309:0x83fe7456b9283a0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Newburgh+seal+beach/data=!4m2!3m1!1s0x488475546dc26309:0x83fe7456b9283a0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-1.976992,57.3188269,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Duntulm Castle</name>
+      <description>https://www.google.com/maps/place/Duntulm+Castle/data=!4m2!3m1!1s0x488dc7b50ceb3197:0x9462aa4b837c2fc7</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488dc7b50ceb3197:0x9462aa4b837c2fc7</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Duntulm+Castle/data=!4m2!3m1!1s0x488dc7b50ceb3197:0x9462aa4b837c2fc7</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.346992,57.6842683,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Oyster Shed</name>
+      <description>Unbedingt Messer mitnehmen, hat nur so öko Holzgäbäli
+
+https://www.google.com/maps/place/The+Oyster+Shed/data=!4m2!3m1!1s0x488c3801af2c00cb:0x5fd40cc745b1795</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488c3801af2c00cb:0x5fd40cc745b1795</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Oyster+Shed/data=!4m2!3m1!1s0x488c3801af2c00cb:0x5fd40cc745b1795</value></Data>
+        <Data name="note"><value>Unbedingt Messer mitnehmen, hat nur so öko Holzgäbäli</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.3577315,57.2994629,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Phipps hall, Station Road, Beauly, IV4 7EH</name>
+      <description>https://www.google.com/maps/place/Phipps+hall,+Station+Road,+Beauly,+IV4+7EH/data=!4m2!3m1!1s0x488f0bf31bbdea0f:0xb7f135bdd34c5f0a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f0bf31bbdea0f:0xb7f135bdd34c5f0a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Phipps+hall,+Station+Road,+Beauly,+IV4+7EH/data=!4m2!3m1!1s0x488f0bf31bbdea0f:0xb7f135bdd34c5f0a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.4622303043575196,57.482644600332556,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Salmon Landings</name>
+      <description>https://www.google.com/maps/place/Salmon+Landings/data=!4m2!3m1!1s0x489aa74fb44b49df:0x28a518864474ec49</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489aa74fb44b49df:0x28a518864474ec49</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Salmon+Landings/data=!4m2!3m1!1s0x489aa74fb44b49df:0x28a518864474ec49</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.014098919420933,58.58162835301604,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Brodie Countryfare</name>
+      <description>https://www.google.com/maps/place/Brodie+Countryfare/data=!4m2!3m1!1s0x4885789cf89394c7:0x473e6fbff037529a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885789cf89394c7:0x473e6fbff037529a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Brodie+Countryfare/data=!4m2!3m1!1s0x4885789cf89394c7:0x473e6fbff037529a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7136466,57.592806,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Lochside Brasserie</name>
+      <description>https://www.google.com/maps/place/The+Lochside+Brasserie/data=!4m2!3m1!1s0x488ed1164424c7c9:0x14111fc87703b199</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ed1164424c7c9:0x14111fc87703b199</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Lochside+Brasserie/data=!4m2!3m1!1s0x488ed1164424c7c9:0x14111fc87703b199</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.8829982,56.9784464,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dalwhinnie</name>
+      <description>https://www.google.com/maps/place/Dalwhinnie/data=!4m2!3m1!1s0x488f4a206a995c53:0xa2c3bada1105c4cc</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f4a206a995c53:0xa2c3bada1105c4cc</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dalwhinnie/data=!4m2!3m1!1s0x488f4a206a995c53:0xa2c3bada1105c4cc</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.2462331,56.9351529,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Old Bank Whisky Shop</name>
+      <description>https://www.google.com/maps/place/The+Old+Bank+Whisky+Shop/data=!4m2!3m1!1s0x48857782144bc91d:0xd80e22007db1584a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48857782144bc91d:0xd80e22007db1584a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Old+Bank+Whisky+Shop/data=!4m2!3m1!1s0x48857782144bc91d:0xd80e22007db1584a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.613928238256268,57.609548709865045,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Barra Airport</name>
+      <description>https://www.google.com/maps/place/Barra+Airport/data=!4m2!3m1!1s0x488cbf4110d91b7b:0x2fbb09f3fcd5a692</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488cbf4110d91b7b:0x2fbb09f3fcd5a692</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Barra+Airport/data=!4m2!3m1!1s0x488cbf4110d91b7b:0x2fbb09f3fcd5a692</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-7.4475248,57.0250086,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Benrinnes</name>
+      <description>https://www.google.com/maps/place/Benrinnes/data=!4m2!3m1!1s0x4885a4a018c629bd:0x178034e2d2c6f1ea</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a4a018c629bd:0x178034e2d2c6f1ea</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Benrinnes/data=!4m2!3m1!1s0x4885a4a018c629bd:0x178034e2d2c6f1ea</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.240265,57.4435937,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Balnakeil Beach</name>
+      <description>https://www.google.com/maps/place/Balnakeil+Beach/data=!4m2!3m1!1s0x4890399848f9114f:0x1b982e46716526a7</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4890399848f9114f:0x1b982e46716526a7</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Balnakeil+Beach/data=!4m2!3m1!1s0x4890399848f9114f:0x1b982e46716526a7</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7669108,58.5758558,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hafen von Gills Bay</name>
+      <description>https://www.google.com/maps/place/Hafen+von+Gills+Bay/data=!4m2!3m1!1s0x489adc398f5bcbfb:0x6929de16642ebbf0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489adc398f5bcbfb:0x6929de16642ebbf0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Hafen+von+Gills+Bay/data=!4m2!3m1!1s0x489adc398f5bcbfb:0x6929de16642ebbf0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.161579377413531,58.6387755223238,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Uilebheist Distillery &amp; Brewery</name>
+      <description>https://www.google.com/maps/place/Uilebheist+Distillery+%26+Brewery/data=!4m2!3m1!1s0x488f717e95f6a953:0x4f93c85a606d976a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f717e95f6a953:0x4f93c85a606d976a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Uilebheist+Distillery+%26+Brewery/data=!4m2!3m1!1s0x488f717e95f6a953:0x4f93c85a606d976a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.226453140294235,57.472957068305035,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gentlemens Country Clothing Hall</name>
+      <description>https://www.google.com/maps/place/Gentlemens+Country+Clothing+Hall/data=!4m2!3m1!1s0x4888ac2839a6f26f:0x91bbfaa7dc56ab42</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888ac2839a6f26f:0x91bbfaa7dc56ab42</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gentlemens+Country+Clothing+Hall/data=!4m2!3m1!1s0x4888ac2839a6f26f:0x91bbfaa7dc56ab42</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.930536212694534,56.770583220190225,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Eden Court Inverness</name>
+      <description>https://www.google.com/maps/place/Eden+Court+Inverness/data=!4m2!3m1!1s0x488f7150cc0f399d:0xb71bfa479a020f47</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f7150cc0f399d:0xb71bfa479a020f47</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Eden+Court+Inverness/data=!4m2!3m1!1s0x488f7150cc0f399d:0xb71bfa479a020f47</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.2308204,57.4730717,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Strathspey Railway - Aviemore Station</name>
+      <description>https://www.google.com/maps/place/Strathspey+Railway+-+Aviemore+Station/data=!4m2!3m1!1s0x488f5f8609f7cfbb:0x2741924c44aa8b93</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f5f8609f7cfbb:0x2741924c44aa8b93</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Strathspey+Railway+-+Aviemore+Station/data=!4m2!3m1!1s0x488f5f8609f7cfbb:0x2741924c44aa8b93</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8288803,57.188278,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Faraid Head</name>
+      <description>https://www.google.com/maps/place/Faraid+Head/data=!4m2!3m1!1s0x489039e9b7fa51dd:0x75f351db5557bb8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489039e9b7fa51dd:0x75f351db5557bb8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Faraid+Head/data=!4m2!3m1!1s0x489039e9b7fa51dd:0x75f351db5557bb8</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.7770374864582585,58.599627952948275,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tesco Extra</name>
+      <description>https://www.google.com/maps/place/Tesco+Extra/data=!4m2!3m1!1s0x488624b15da0eea3:0xcd5a4e1a95117386</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488624b15da0eea3:0xcd5a4e1a95117386</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Tesco+Extra/data=!4m2!3m1!1s0x488624b15da0eea3:0xcd5a4e1a95117386</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.4785823,56.4079087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Kingsbarns Distillery</name>
+      <description>https://www.google.com/maps/place/Kingsbarns+Distillery/data=!4m2!3m1!1s0x4886f96788fb2aa9:0xc27586d07d936e5</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4886f96788fb2aa9:0xc27586d07d936e5</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Kingsbarns+Distillery/data=!4m2!3m1!1s0x4886f96788fb2aa9:0xc27586d07d936e5</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-2.6428921,56.287099,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glencadam</name>
+      <description>https://www.google.com/maps/place/Glencadam/data=!4m2!3m1!1s0x488685c21de04569:0x84a9b7f1f9d2238</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488685c21de04569:0x84a9b7f1f9d2238</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glencadam/data=!4m2!3m1!1s0x488685c21de04569:0x84a9b7f1f9d2238</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-2.6535092,56.7363112,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Speyside Cooperage Visitor Centre</name>
+      <description>https://www.google.com/maps/place/Speyside+Cooperage+Visitor+Centre/data=!4m2!3m1!1s0x4885a567d6c85a45:0x66380b5416505e5a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a567d6c85a45:0x66380b5416505e5a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Speyside+Cooperage+Visitor+Centre/data=!4m2!3m1!1s0x4885a567d6c85a45:0x66380b5416505e5a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.1806935,57.4825899,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dailuaine</name>
+      <description>https://www.google.com/maps/place/Dailuaine/data=!4m2!3m1!1s0x4885a312c41a1ae5:0x5586823dae9a44f1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885a312c41a1ae5:0x5586823dae9a44f1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dailuaine/data=!4m2!3m1!1s0x4885a312c41a1ae5:0x5586823dae9a44f1</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2723783,57.4527049,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lean To Coffee - Skye Cafe</name>
+      <description>https://www.google.com/maps/place/Lean+To+Coffee+-+Skye+Cafe/data=!4m2!3m1!1s0x488e9d0cf590062d:0xdb9a0cd814371b1d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e9d0cf590062d:0xdb9a0cd814371b1d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Lean+To+Coffee+-+Skye+Cafe/data=!4m2!3m1!1s0x488e9d0cf590062d:0xdb9a0cd814371b1d</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.830339513741685,57.24638085586382,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Forth Bridge</name>
+      <description>https://www.google.com/maps/place/Forth+Bridge/data=!4m2!3m1!1s0x4887cf9285ad0a07:0xe15e532beaaea823</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887cf9285ad0a07:0xe15e532beaaea823</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Forth+Bridge/data=!4m2!3m1!1s0x4887cf9285ad0a07:0xe15e532beaaea823</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.3882699,55.9997834,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tomintoul</name>
+      <description>https://www.google.com/maps/place/Tomintoul/data=!4m2!3m1!1s0x4885943250d84a39:0xd7b691733e43a2e1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885943250d84a39:0xd7b691733e43a2e1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Tomintoul/data=!4m2!3m1!1s0x4885943250d84a39:0xd7b691733e43a2e1</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.3793236,57.2519329,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fiddlers Highland Restaurant</name>
+      <description>https://www.google.com/maps/place/Fiddlers+Highland+Restaurant/data=!4m2!3m1!1s0x488f1178382f6ffb:0x81bb5996791168d4</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f1178382f6ffb:0x81bb5996791168d4</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Fiddlers+Highland+Restaurant/data=!4m2!3m1!1s0x488f1178382f6ffb:0x81bb5996791168d4</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.4796700589105445,57.33558801881805,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Lovat Hotel &amp; Restaurant</name>
+      <description>https://www.google.com/maps/place/The+Lovat+Hotel+%26+Restaurant/data=!4m2!3m1!1s0x488f217df99e60d5:0xd65daaf7930dda63</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f217df99e60d5:0xd65daaf7930dda63</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Lovat+Hotel+%26+Restaurant/data=!4m2!3m1!1s0x488f217df99e60d5:0xd65daaf7930dda63</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.6823433,57.1437928,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Gellions Bar</name>
+      <description>Live Musik
+
+https://www.google.com/maps/place/Gellions+Bar/data=!4m2!3m1!1s0x488f7152267600ab:0xeea5e25127cb1cd5</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f7152267600ab:0xeea5e25127cb1cd5</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Gellions+Bar/data=!4m2!3m1!1s0x488f7152267600ab:0xeea5e25127cb1cd5</value></Data>
+        <Data name="note"><value>Live Musik</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.2259778,57.4774726,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Skyeskyns</name>
+      <description>https://www.google.com/maps/place/Skyeskyns/data=!4m2!3m1!1s0x488db3776a78140b:0x62b6b6c86fb3b625</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488db3776a78140b:0x62b6b6c86fb3b625</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Skyeskyns/data=!4m2!3m1!1s0x488db3776a78140b:0x62b6b6c86fb3b625</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.5712584,57.5191888,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Behind the Radar</name>
+      <description>https://www.google.com/maps/place/Behind+the+Radar/data=!4m2!3m1!1s0x488f712af5321177:0xa060e871760fe692</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f712af5321177:0xa060e871760fe692</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Behind+the+Radar/data=!4m2!3m1!1s0x488f712af5321177:0xa060e871760fe692</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1988818,57.4811682,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ben Nevis Distillery</name>
+      <description>https://www.google.com/maps/place/Ben+Nevis+Distillery/data=!4m2!3m1!1s0x488eccdb4448a04f:0x7fe518dc7bae1898</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eccdb4448a04f:0x7fe518dc7bae1898</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Ben+Nevis+Distillery/data=!4m2!3m1!1s0x488eccdb4448a04f:0x7fe518dc7bae1898</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.0731782,56.8350102,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Jupiter Artland</name>
+      <description>https://www.google.com/maps/place/Jupiter+Artland/data=!4m2!3m1!1s0x4887db453f939839:0x92c0c5dac16413bd</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887db453f939839:0x92c0c5dac16413bd</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Jupiter+Artland/data=!4m2!3m1!1s0x4887db453f939839:0x92c0c5dac16413bd</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.4213729,55.9041405,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bealach na Ba Viewpoint</name>
+      <description>https://www.google.com/maps/place/Bealach+na+Ba+Viewpoint/data=!4m2!3m1!1s0x488e8421539138a9:0xd5ac805aa449c0ec</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e8421539138a9:0xd5ac805aa449c0ec</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Bealach+na+Ba+Viewpoint/data=!4m2!3m1!1s0x488e8421539138a9:0xd5ac805aa449c0ec</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.7087854,57.4187466,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tomatin</name>
+      <description>https://www.google.com/maps/place/Tomatin/data=!4m2!3m1!1s0x488f644459656cc3:0x5186809c699bd18c</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f644459656cc3:0x5186809c699bd18c</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Tomatin/data=!4m2!3m1!1s0x488f644459656cc3:0x5186809c699bd18c</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9892039,57.3336002,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Parkplatz Plodda Falls</name>
+      <description>https://www.google.com/maps/place/Parkplatz+Plodda+Falls/data=!4m2!3m1!1s0x488ee1f3fcc2f4d9:0xd5a604a5068c805a</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488ee1f3fcc2f4d9:0xd5a604a5068c805a</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Parkplatz+Plodda+Falls/data=!4m2!3m1!1s0x488ee1f3fcc2f4d9:0xd5a604a5068c805a</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.8545497,57.2724686,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Isle of Jura</name>
+      <description>https://www.google.com/maps/place/Isle+of+Jura/data=!4m2!3m1!1s0x488a3901094183e7:0xea3ca83aa912752</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488a3901094183e7:0xea3ca83aa912752</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Isle+of+Jura/data=!4m2!3m1!1s0x488a3901094183e7:0xea3ca83aa912752</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.9516934,55.8326731,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Apple Cross Beach</name>
+      <description>https://www.google.com/maps/place/Apple+Cross+Beach/data=!4m2!3m1!1s0x488e81eb461a5543:0xd30ae9d4171d3ef6</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e81eb461a5543:0xd30ae9d4171d3ef6</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Apple+Cross+Beach/data=!4m2!3m1!1s0x488e81eb461a5543:0xd30ae9d4171d3ef6</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9469368,56.1224429,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Waterfall</name>
+      <description>https://www.google.com/maps/place/Waterfall/data=!4m2!3m1!1s0x488fd5f109cf90e1:0x714d796ef824d031</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488fd5f109cf90e1:0x714d796ef824d031</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Waterfall/data=!4m2!3m1!1s0x488fd5f109cf90e1:0x714d796ef824d031</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.1874281,57.4167497,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>East Beach Car Park</name>
+      <description>https://www.google.com/maps/place/East+Beach+Car+Park/data=!4m2!3m1!1s0x48857fe5315f48c5:0x7ff25bf950e61d84</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48857fe5315f48c5:0x7ff25bf950e61d84</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/East+Beach+Car+Park/data=!4m2!3m1!1s0x48857fe5315f48c5:0x7ff25bf950e61d84</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.433615,57.7114516,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Raigmore Hospital Emergency Department</name>
+      <description>https://www.google.com/maps/place/Raigmore+Hospital+Emergency+Department/data=!4m2!3m1!1s0x488f71303ec00001:0xdd418f77efed828d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f71303ec00001:0xdd418f77efed828d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Raigmore+Hospital+Emergency+Department/data=!4m2!3m1!1s0x488f71303ec00001:0xdd418f77efed828d</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.1935703,57.4747958,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dewar&apos;s Aberfeldy Distillery</name>
+      <description>https://www.google.com/maps/place/Dewar&apos;s+Aberfeldy+Distillery/data=!4m2!3m1!1s0x4888a69b31026b7b:0x357f2c6e57a0c0ca</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4888a69b31026b7b:0x357f2c6e57a0c0ca</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dewar&apos;s+Aberfeldy+Distillery/data=!4m2!3m1!1s0x4888a69b31026b7b:0x357f2c6e57a0c0ca</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8519569,56.6240832,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Old Mill Inn</name>
+      <description>https://www.google.com/maps/place/The+Old+Mill+Inn/data=!4m2!3m1!1s0x488602bcbe18f15d:0x7e10ed72e190e2bf</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488602bcbe18f15d:0x7e10ed72e190e2bf</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Old+Mill+Inn/data=!4m2!3m1!1s0x488602bcbe18f15d:0x7e10ed72e190e2bf</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.7342992,56.7037881,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Highland Wildlife Park</name>
+      <description>https://www.google.com/maps/place/Highland+Wildlife+Park/data=!4m2!3m1!1s0x488f5a16fbb712f3:0x74b4583d619e26be</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f5a16fbb712f3:0x74b4583d619e26be</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Highland+Wildlife+Park/data=!4m2!3m1!1s0x488f5a16fbb712f3:0x74b4583d619e26be</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.9758201,57.1098953,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Corrimoney church</name>
+      <description>https://www.google.com/maps/place/Corrimoney+church/data=!4m2!3m1!1s0x488f1b0019d40547:0x1ac2582ce6ececde</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f1b0019d40547:0x1ac2582ce6ececde</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Corrimoney+church/data=!4m2!3m1!1s0x488f1b0019d40547:0x1ac2582ce6ececde</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.673481848302577,57.333356280574066,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Scotch Whisky Experience</name>
+      <description>https://www.google.com/maps/place/The+Scotch+Whisky+Experience/data=!4m2!3m1!1s0x4887c79a5d9babff:0x57bd24a1320bb51</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887c79a5d9babff:0x57bd24a1320bb51</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Scotch+Whisky+Experience/data=!4m2!3m1!1s0x4887c79a5d9babff:0x57bd24a1320bb51</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.1958749,55.9487433,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pulteney</name>
+      <description>https://www.google.com/maps/place/Pulteney/data=!4m2!3m1!1s0x489ad6a31063a60d:0xa0570604a07b59e8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x489ad6a31063a60d:0xa0570604a07b59e8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Pulteney/data=!4m2!3m1!1s0x489ad6a31063a60d:0xa0570604a07b59e8</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.0846985,58.4344362,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Glenmorangie</name>
+      <description>https://www.google.com/maps/place/Glenmorangie/data=!4m2!3m1!1s0x488f8ec209975e43:0xa383bddd34f1ebd0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f8ec209975e43:0xa383bddd34f1ebd0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Glenmorangie/data=!4m2!3m1!1s0x488f8ec209975e43:0xa383bddd34f1ebd0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.0788766,57.8266817,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>WDC Scottish Dolphin Centre</name>
+      <description>https://www.google.com/maps/place/WDC+Scottish+Dolphin+Centre/data=!4m2!3m1!1s0x4885065e54114131:0x958d366533a3b859</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885065e54114131:0x958d366533a3b859</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/WDC+Scottish+Dolphin+Centre/data=!4m2!3m1!1s0x4885065e54114131:0x958d366533a3b859</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.0930497,57.6734893,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Lock Inn</name>
+      <description>https://www.google.com/maps/place/The+Lock+Inn/data=!4m2!3m1!1s0x488f217e03b7a9d3:0x90d58b9acc79a869</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f217e03b7a9d3:0x90d58b9acc79a869</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Lock+Inn/data=!4m2!3m1!1s0x488f217e03b7a9d3:0x90d58b9acc79a869</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.6819526,57.1445885,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Boatshed</name>
+      <description>https://www.google.com/maps/place/The+Boatshed/data=!4m2!3m1!1s0x4889099377bafa97:0xb61e6466f75e0840</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4889099377bafa97:0xb61e6466f75e0840</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Boatshed/data=!4m2!3m1!1s0x4889099377bafa97:0xb61e6466f75e0840</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.907003,56.1526184,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ardmair Beach</name>
+      <description>strand
+
+https://www.google.com/maps/place/Ardmair+Beach/data=!4m2!3m1!1s0x488e37cf0037a9d3:0x5caf7707fd20d67e</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e37cf0037a9d3:0x5caf7707fd20d67e</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Ardmair+Beach/data=!4m2!3m1!1s0x488e37cf0037a9d3:0x5caf7707fd20d67e</value></Data>
+        <Data name="note"><value>strand</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.1949881,57.9328174,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Suidhe Viewpoint</name>
+      <description>Nordlichter können hier sichtbar sein
+
+https://www.google.com/maps/place/Suidhe+Viewpoint/data=!4m2!3m1!1s0x488f231943b8513d:0x5a2325621f4bff8</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f231943b8513d:0x5a2325621f4bff8</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Suidhe+Viewpoint/data=!4m2!3m1!1s0x488f231943b8513d:0x5a2325621f4bff8</value></Data>
+        <Data name="note"><value>Nordlichter können hier sichtbar sein</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.5649996,57.1594551,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Victorian Market</name>
+      <description>https://www.google.com/maps/place/The+Victorian+Market/data=!4m2!3m1!1s0x488f71550ed1553b:0xd756aaea6c6056e0</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f71550ed1553b:0xd756aaea6c6056e0</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Victorian+Market/data=!4m2!3m1!1s0x488f71550ed1553b:0xd756aaea6c6056e0</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.2256315,57.4790953,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cramond Island</name>
+      <description>https://www.google.com/maps/place/Cramond+Island/data=!4m2!3m1!1s0x4887c8b1dd964fe1:0x9e5017284d48e186</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4887c8b1dd964fe1:0x9e5017284d48e186</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Cramond+Island/data=!4m2!3m1!1s0x4887c8b1dd964fe1:0x9e5017284d48e186</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2897351,55.992815,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Belford Hospital</name>
+      <description>https://www.google.com/maps/place/Belford+Hospital/data=!4m2!3m1!1s0x488eccad741d7a17:0x9f3e8684adbe5d79</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eccad741d7a17:0x9f3e8684adbe5d79</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Belford+Hospital/data=!4m2!3m1!1s0x488eccad741d7a17:0x9f3e8684adbe5d79</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.1053225,56.81925,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dolphin View Point</name>
+      <description>https://www.google.com/maps/place/Dolphin+View+Point/data=!4m2!3m1!1s0x488f793cce67ec4b:0x8cfc87533a076414</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f793cce67ec4b:0x8cfc87533a076414</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Dolphin+View+Point/data=!4m2!3m1!1s0x488f793cce67ec4b:0x8cfc87533a076414</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.0917924,57.5741373,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Landmark Forest Adventure Park</name>
+      <description>https://www.google.com/maps/place/Landmark+Forest+Adventure+Park/data=!4m2!3m1!1s0x488f71576197a8fd:0xa42330a3c894fdd1</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f71576197a8fd:0xa42330a3c894fdd1</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Landmark+Forest+Adventure+Park/data=!4m2!3m1!1s0x488f71576197a8fd:0xa42330a3c894fdd1</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8131005,57.2777048,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rothiemurchus</name>
+      <description>https://www.google.com/maps/place/Rothiemurchus/data=!4m2!3m1!1s0x4885f584394526e7:0xa1ece64fbc695759</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885f584394526e7:0xa1ece64fbc695759</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Rothiemurchus/data=!4m2!3m1!1s0x4885f584394526e7:0xa1ece64fbc695759</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.8185745,57.1764801,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Caol Ila</name>
+      <description>https://www.google.com/maps/place/Caol+Ila/data=!4m2!3m1!1s0x488a463e5762263b:0x29b29bc8abe1c412</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488a463e5762263b:0x29b29bc8abe1c412</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Caol+Ila/data=!4m2!3m1!1s0x488a463e5762263b:0x29b29bc8abe1c412</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.1108571,55.8531336,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Salmon Ladder at Pitlochry Dam</name>
+      <description>https://www.google.com/maps/place/Salmon+Ladder+at+Pitlochry+Dam/data=!4m2!3m1!1s0x488602a5b3be05a3:0x261adc595623f7d2</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488602a5b3be05a3:0x261adc595623f7d2</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Salmon+Ladder+at+Pitlochry+Dam/data=!4m2!3m1!1s0x488602a5b3be05a3:0x261adc595623f7d2</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.740469694580231,56.69887526093017,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Scottish Antiques &amp; Arts Centre</name>
+      <description>https://www.google.com/maps/place/Scottish+Antiques+%26+Arts+Centre/data=!4m2!3m1!1s0x48888b9cce51eda9:0xc737059151f1246e</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x48888b9cce51eda9:0xc737059151f1246e</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Scottish+Antiques+%26+Arts+Centre/data=!4m2!3m1!1s0x48888b9cce51eda9:0xc737059151f1246e</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.07125050916978,56.20144281066265,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Dundonnell Hotel</name>
+      <description>https://www.google.com/maps/place/The+Dundonnell+Hotel/data=!4m2!3m1!1s0x488e4639c05324d5:0x93f0ab01a14fd97d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e4639c05324d5:0x93f0ab01a14fd97d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/The+Dundonnell+Hotel/data=!4m2!3m1!1s0x488e4639c05324d5:0x93f0ab01a14fd97d</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.2120431,57.8394489,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rubha Hunish</name>
+      <description>https://www.google.com/maps/place/Rubha+Hunish/data=!4m2!3m1!1s0x488dc67af80e6ee7:0x383a0464f3aadc88</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488dc67af80e6ee7:0x383a0464f3aadc88</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Rubha+Hunish/data=!4m2!3m1!1s0x488dc67af80e6ee7:0x383a0464f3aadc88</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.3551583,57.707264,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Saint Mary &amp; Saint Finnan Church</name>
+      <description>https://www.google.com/maps/place/Saint+Mary+%26+Saint+Finnan+Church/data=!4m2!3m1!1s0x488eb2354f4a1a35:0x7d175c19b2562883</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488eb2354f4a1a35:0x7d175c19b2562883</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Saint+Mary+%26+Saint+Finnan+Church/data=!4m2!3m1!1s0x488eb2354f4a1a35:0x7d175c19b2562883</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-5.441623217982735,56.871296456557744,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Balmoral Castle</name>
+      <description>https://www.google.com/maps/place/Balmoral+Castle/data=!4m2!3m1!1s0x4885dcc3c870bc5f:0xd15d143f21fc0936</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x4885dcc3c870bc5f:0xd15d143f21fc0936</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Balmoral+Castle/data=!4m2!3m1!1s0x4885dcc3c870bc5f:0xd15d143f21fc0936</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.2301195,57.0406959,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Otter Hide</name>
+      <description>https://www.google.com/maps/place/Otter+Hide/data=!4m2!3m1!1s0x488e996bdc2cacc5:0xf78857aa6fdf1a67</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488e996bdc2cacc5:0xf78857aa6fdf1a67</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Otter+Hide/data=!4m2!3m1!1s0x488e996bdc2cacc5:0xf78857aa6fdf1a67</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-3.6392775,57.5799821,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Brennerei Lagavulin</name>
+      <description>https://www.google.com/maps/place/Brennerei+Lagavulin/data=!4m2!3m1!1s0x488a691303958a4d:0x40aa3212b84bf0fc</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488a691303958a4d:0x40aa3212b84bf0fc</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Brennerei+Lagavulin/data=!4m2!3m1!1s0x488a691303958a4d:0x40aa3212b84bf0fc</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-6.1260477273435034,55.635525441009925,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hootananny</name>
+      <description>Live Musik
+
+https://www.google.com/maps/place/Hootananny/data=!4m2!3m1!1s0x488f71525287cda7:0xc751a63595840bad</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f71525287cda7:0xc751a63595840bad</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Hootananny/data=!4m2!3m1!1s0x488f71525287cda7:0xc751a63595840bad</value></Data>
+        <Data name="note"><value>Live Musik</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.2272987,57.4790609,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bothy Restaurant &amp; Bar</name>
+      <description>Pub
+
+https://www.google.com/maps/place/Bothy+Restaurant+%26+Bar/data=!4m2!3m1!1s0x488f23d582c00327:0xc821d1714783fb9d</description>
+      <ExtendedData>
+        <Data name="placeId"><value>0x488f23d582c00327:0xc821d1714783fb9d</value></Data>
+        <Data name="url"><value>https://www.google.com/maps/place/Bothy+Restaurant+%26+Bar/data=!4m2!3m1!1s0x488f23d582c00327:0xc821d1714783fb9d</value></Data>
+        <Data name="note"><value>Pub</value></Data>
+        <Data name="source"><value>reused</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-4.6810817,57.1446705,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
