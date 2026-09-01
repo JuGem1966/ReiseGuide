@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Proximity Alert</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2236;
+    --accent: #22d3ee;
+    --accent-dim: rgba(34,211,238,0.15);
+    --accent-glow: rgba(34,211,238,0.4);
+    --warn: #f59e0b;
+    --alert: #ef4444;
+    --success: #10b981;
+    --text: #e2e8f0;
+    --text-dim: #64748b;
+    --radius: 12px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(34,211,238,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34,211,238,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .app { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; padding: 20px 16px; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 24px 0 16px;
+  }
+  .header .icon {
+    width: 56px; height: 56px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(34,211,238,0.25);
+    border-radius: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%,100% { box-shadow: 0 0 0 0 var(--accent-dim); }
+    50% { box-shadow: 0 0 20px 4px var(--accent-dim); }
+  }
+  .header h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+  }
+  .header p { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+    transition: border-color 0.3s;
+  }
+  .card:hover { border-color: rgba(34,211,238,0.15); }
+  .card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+
+  /* File input */
+  .file-drop {
+    border: 2px dashed rgba(34,211,238,0.2);
+    border-radius: 10px;
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(34,211,238,0.03);
+  }
+  .file-drop:hover, .file-drop.dragover {
+    border-color: var(--accent);
+    background: rgba(34,211,238,0.08);
+  }
+  .file-drop.loaded {
+    border-color: var(--success);
+    background: rgba(16,185,129,0.06);
+  }
+  .file-drop .emoji { font-size: 32px; margin-bottom: 8px; }
+  .file-drop .label { font-size: 14px; font-weight: 500; }
+  .file-drop .sub { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  .file-drop input { display: none; }
+
+  /* Slider */
+  .slider-wrap { margin-top: 8px; }
+  .slider-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .slider-header .val {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: transform 0.15s;
+  }
+  input[type=range]::-webkit-slider-thumb:active { transform: scale(1.2); }
+  .slider-labels {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--text-dim);
+    margin-top: 6px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Button */
+  .btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-transform: uppercase;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover { box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-1px); }
+  .btn-primary:disabled {
+    background: var(--surface2);
+    color: var(--text-dim);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  .btn-stop {
+    background: rgba(239,68,68,0.15);
+    color: var(--alert);
+    border: 1px solid rgba(239,68,68,0.3);
+  }
+  .btn-stop:hover { background: rgba(239,68,68,0.25); }
+
+  /* Status */
+  .status-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .status-bar .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-idle { background: var(--surface2); }
+  .status-idle .dot { background: var(--text-dim); }
+  .status-active { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); }
+  .status-active .dot { background: var(--success); animation: blink 1.5s infinite; }
+  .status-alert { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); }
+  .status-alert .dot { background: var(--alert); animation: blink 0.5s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* GPS info */
+  .gps-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .gps-box {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .gps-box .lbl { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; font-family: 'Space Mono', monospace; }
+  .gps-box .val { font-family: 'Space Mono', monospace; font-size: 13px; margin-top: 4px; color: var(--text); }
+
+  /* Nearby list */
+  .nearby-list { margin-top: 12px; }
+  .nearby-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: background 0.2s;
+  }
+  .nearby-item.in-range {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.2);
+    animation: flash-alert 1.5s ease-in-out infinite;
+  }
+  .nearby-item.out-range {
+    background: var(--surface2);
+    border: 1px solid transparent;
+  }
+  @keyframes flash-alert {
+    0%,100% { background: rgba(239,68,68,0.1); }
+    50% { background: rgba(239,68,68,0.2); }
+  }
+  .nearby-item .dist {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    min-width: 70px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .nearby-item .name {
+    font-size: 13px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .nearby-item .indicator {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .nearby-item.in-range .indicator { background: var(--alert); }
+  .nearby-item.out-range .indicator { background: var(--text-dim); }
+  .nearby-item.in-range .dist { color: var(--alert); font-weight: 700; }
+
+  /* Category dot on nearby items */
+  .cat-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Filter chips */
+  .filter-card { padding-bottom: 16px; }
+  .filter-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .filter-chip:hover { border-color: rgba(255,255,255,0.2); }
+  .filter-chip .chip-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .filter-chip .chip-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+  .filter-summary {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Nearby item detail popup */
+  .nearby-item { position: relative; cursor: pointer; }
+  .nearby-item .expand-icon {
+    font-size: 11px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .nearby-item.expanded .expand-icon { transform: rotate(180deg); }
+  .nearby-detail {
+    display: none;
+    padding: 10px 12px 6px 32px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    animation: detailSlide 0.2s ease-out;
+  }
+  .nearby-detail.show { display: block; }
+  @keyframes detailSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .nearby-detail .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    background: rgba(34,211,238,0.08);
+    border: 1px solid rgba(34,211,238,0.2);
+    border-radius: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nearby-detail .nav-link:hover {
+    background: rgba(34,211,238,0.15);
+    border-color: var(--accent);
+  }
+  .nearby-detail .nav-link .nav-arrow {
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.6;
+  }
+  .nearby-detail .detail-row {
+    display: flex;
+    gap: 8px;
+    padding: 3px 0;
+  }
+  .nearby-detail .detail-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 70px;
+    flex-shrink: 0;
+  }
+  .nearby-detail .detail-value {
+    color: var(--text);
+    word-break: break-word;
+  }
+  .nearby-detail a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(34,211,238,0.3);
+    transition: border-color 0.2s;
+  }
+  .nearby-detail a:hover { border-color: var(--accent); }
+  .nearby-detail .no-data {
+    font-style: italic;
+    color: var(--text-dim);
+    opacity: 0.6;
+  }
+
+  /* Guide-Text im Detail-Panel */
+  .guide-text {
+    margin: 4px 0 10px;
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    max-height: 280px;
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text);
+    -webkit-overflow-scrolling: touch;
+  }
+  .guide-text p { margin-bottom: 8px; }
+  .guide-text p:last-child { margin-bottom: 0; }
+  .speak-link.speaking {
+    background: rgba(239,68,68,0.12) !important;
+    border-color: rgba(239,68,68,0.35) !important;
+    color: var(--alert) !important;
+  }
+
+  /* Points count badge */
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    margin-top: 12px;
+  }
+
+  /* Voice selection */
+  .voice-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .voice-row select {
+    flex: 1;
+    min-width: 0;
+    background: var(--surface2);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    outline: none;
+  }
+  .voice-row select:focus { border-color: var(--accent); }
+  .voice-row button {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(34,211,238,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .voice-row button:hover { background: rgba(34,211,238,0.2); }
+  .voice-hint {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    line-height: 1.55;
+  }
+  .voice-hint em { color: var(--text); font-style: normal; font-weight: 500; }
+
+  /* Retry-Button für Standard-Dateien */
+  .default-retry {
+    display: block;
+    margin: 10px auto 0;
+    padding: 6px 14px;
+    background: none;
+    border: 1px dashed rgba(34,211,238,0.3);
+    color: var(--text-dim);
+    border-radius: 8px;
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .default-retry:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Log */
+  .log {
+    max-height: 150px;
+    overflow-y: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    padding: 10px;
+    background: var(--surface2);
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  .log-entry { padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .log-entry .time { color: var(--accent); margin-right: 8px; }
+
+  .hidden { display: none !important; }
+
+  /* Smooth entry */
+  .card { animation: slideUp 0.4s ease-out both; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.1s; }
+  .card:nth-child(4) { animation-delay: 0.15s; }
+  @keyframes slideUp {
+    from { opacity:0; transform: translateY(12px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+
+  /* GPS Permission Card */
+  .gps-check {
+    text-align: center;
+    padding: 8px 0;
+  }
+  .gps-check .status-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    margin-bottom: 14px;
+    transition: all 0.4s;
+  }
+  .gps-check .status-icon.checking {
+    background: rgba(34,211,238,0.1);
+    border: 2px solid rgba(34,211,238,0.3);
+    animation: spin-pulse 1.5s ease-in-out infinite;
+  }
+  .gps-check .status-icon.granted {
+    background: rgba(16,185,129,0.12);
+    border: 2px solid rgba(16,185,129,0.3);
+  }
+  .gps-check .status-icon.denied {
+    background: rgba(239,68,68,0.12);
+    border: 2px solid rgba(239,68,68,0.3);
+  }
+  .gps-check .status-icon.prompt {
+    background: rgba(245,158,11,0.12);
+    border: 2px solid rgba(245,158,11,0.3);
+  }
+  .gps-check .status-icon.unavailable {
+    background: rgba(100,116,139,0.15);
+    border: 2px solid rgba(100,116,139,0.3);
+  }
+  @keyframes spin-pulse {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+  .gps-check h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .gps-check p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+  .gps-check .recheck-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(34,211,238,0.25);
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .gps-check .recheck-btn:hover { background: rgba(34,211,238,0.2); }
+
+  /* Help accordion */
+  .help-section { margin-top: 16px; text-align: left; }
+  .help-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .help-toggle:hover { border-color: rgba(34,211,238,0.2); }
+  .help-toggle .arrow { transition: transform 0.3s; font-size: 12px; color: var(--text-dim); }
+  .help-toggle.open .arrow { transform: rotate(180deg); }
+  .help-panel { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .help-panel.open { max-height: 800px; }
+  .help-content { padding: 14px 0 4px; }
+  .platform-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+  .platform-tab {
+    padding: 7px 14px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .platform-tab:hover { border-color: rgba(34,211,238,0.2); }
+  .platform-tab.active {
+    background: var(--accent-dim);
+    border-color: rgba(34,211,238,0.3);
+    color: var(--accent);
+  }
+  .platform-help { display: none; font-size: 13px; line-height: 1.7; color: var(--text-dim); }
+  .platform-help.active { display: block; }
+  .platform-help .step {
+    display: flex; gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .platform-help .step:last-child { border-bottom: none; }
+  .platform-help .step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-dim);
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .platform-help .step-text { flex: 1; }
+  .platform-help em { color: var(--text); font-style: normal; font-weight: 500; }
+
+  /* Fullscreen Alarm Overlay */
+  .alarm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+    animation: alarm-flash 1s ease-in-out infinite;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  @keyframes alarm-flash {
+    0%, 100% { background: rgba(220, 38, 38, 0.92); }
+    50% { background: rgba(153, 27, 27, 0.96); }
+  }
+  .alarm-overlay.hidden { display: none; }
+  .alarm-overlay .alarm-icon {
+    font-size: 72px;
+    margin-bottom: 16px;
+    animation: alarm-bounce 0.6s ease-in-out infinite alternate;
+  }
+  @keyframes alarm-bounce {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+  }
+  .alarm-overlay .alarm-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+  }
+  .alarm-overlay .alarm-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    max-width: 90%;
+    line-height: 1.3;
+  }
+  .alarm-overlay .alarm-dist {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+  }
+  .alarm-overlay .alarm-dismiss {
+    padding: 18px 48px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 14px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .alarm-overlay .alarm-dismiss:hover,
+  .alarm-overlay .alarm-dismiss:active {
+    background: rgba(255,255,255,0.3);
+    border-color: #fff;
+    transform: scale(1.03);
+  }
+  .alarm-overlay .alarm-multiple {
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+  .alarm-overlay .alarm-text {
+    max-height: 32vh;
+    width: 100%;
+    max-width: 480px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: left;
+    color: #fff;
+    -webkit-overflow-scrolling: touch;
+  }
+  .alarm-overlay .alarm-text p { margin-bottom: 10px; }
+  .alarm-overlay .alarm-text p:last-child { margin-bottom: 0; }
+  .alarm-overlay .alarm-text a { color: #fff; text-decoration: underline; }
+  .alarm-overlay .alarm-text::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.35); }
+  .alarm-overlay .alarm-speaking {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+  .alarm-overlay .alarm-speaking .spk-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: blink 1s infinite;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="header">
+    <div class="icon">📍</div>
+    <h1>Proximity Alert</h1>
+    <p>KML-Punkte im Blick behalten</p>
+  </div>
+
+  <!-- GPS Permission Check -->
+  <div class="card" id="gpsCard">
+    <div class="card-label">GPS Berechtigung</div>
+    <div class="gps-check">
+      <div class="status-icon checking" id="gpsIcon">🛰️</div>
+      <h3 id="gpsTitle">GPS wird geprüft…</h3>
+      <p id="gpsMsg">Standort-Berechtigung wird überprüft.</p>
+      <button class="recheck-btn hidden" id="recheckBtn">Erneut prüfen</button>
+      <button class="recheck-btn hidden" id="requestBtn">Berechtigung anfordern</button>
+
+      <div class="help-section hidden" id="helpSection">
+        <button class="help-toggle" id="helpToggle">
+          <span>Wie aktiviere ich GPS / Standort?</span>
+          <span class="arrow">▼</span>
+        </button>
+        <div class="help-panel" id="helpPanel">
+          <div class="help-content">
+            <div class="platform-tabs" id="platformTabs">
+              <button class="platform-tab active" data-platform="iphone">iPhone</button>
+              <button class="platform-tab" data-platform="android">Android</button>
+              <button class="platform-tab" data-platform="windows">Windows</button>
+              <button class="platform-tab" data-platform="mac">macOS</button>
+              <button class="platform-tab" data-platform="linux">Linux</button>
+            </div>
+
+            <div class="platform-help active" id="help-iphone">
+              <div class="step"><div class="step-num">1</div><div class="step-text">Öffne <em>Einstellungen → Datenschutz & Sicherheit → Ortungsdienste</em></div></div>
+              <div class="step"><div class="step-num">2</div><div class="step-text">Stelle sicher, dass <em>Ortungsdienste</em> oben aktiviert sind (grüner Schalter)</div></div>
+              <div class="step"><div class="step-num">3</div><div class="step-text">Scrolle runter zum genutzten Browser (Safari, Chrome, Firefox…) und wähle <em>Beim Verwenden der App</em></div></div>
+              <div class="step"><div class="step-num">4</div><div class="step-text">Lade diese Seite neu und erlaube den Standortzugriff im Browser-Dialog</div></div>
+            </div>
+
+            <div class="platform-help" id="help-android">
+              <div class="step"><div class="step-num">1</div><div class="step-text">Öffne <em>Einstellungen → Standort</em> und aktiviere den Schalter oben</div></div>
+              <div class="step"><div class="step-num">2</div><div class="step-text">Tippe auf <em>App-Berechtigungen</em> → wähle deinen Browser (Chrome, Firefox…)</div></div>
+              <div class="step"><div class="step-num">3</div><div class="step-text">Setze die Berechtigung auf <em>Nur bei Verwendung der App zulassen</em></div></div>
+              <div class="step"><div class="step-num">4</div><div class="step-text">Prüfe auch: <em>Einstellungen → Standort → Standortgenauigkeit verbessern</em> aktivieren für GPS + WLAN</div></div>
+              <div class="step"><div class="step-num">5</div><div class="step-text">Lade diese Seite neu und erlaube den Standortzugriff im Browser-Dialog</div></div>
+            </div>
+
+            <div class="platform-help" id="help-windows">
+              <div class="step"><div class="step-num">1</div><div class="step-text">Öffne <em>Windows-Einstellungen → Datenschutz & Sicherheit → Position</em></div></div>
+              <div class="step"><div class="step-num">2</div><div class="step-text">Aktiviere <em>Positionsdienste</em> und <em>Apps auf den Standort zugreifen lassen</em></div></div>
+              <div class="step"><div class="step-num">3</div><div class="step-text">Aktiviere den Schalter für deinen Browser (Chrome, Edge, Firefox…) in der App-Liste</div></div>
+              <div class="step"><div class="step-num">4</div><div class="step-text">Hinweis: Laptops ohne GPS-Modul nutzen WLAN-basierte Ortung — die Genauigkeit kann eingeschränkt sein</div></div>
+              <div class="step"><div class="step-num">5</div><div class="step-text">Lade diese Seite neu und erlaube den Standortzugriff im Browser-Dialog</div></div>
+            </div>
+
+            <div class="platform-help" id="help-mac">
+              <div class="step"><div class="step-num">1</div><div class="step-text">Öffne <em>Systemeinstellungen → Datenschutz & Sicherheit → Ortungsdienste</em></div></div>
+              <div class="step"><div class="step-num">2</div><div class="step-text">Aktiviere <em>Ortungsdienste</em> und setze das Häkchen bei deinem Browser</div></div>
+              <div class="step"><div class="step-num">3</div><div class="step-text">In Safari: <em>Safari → Einstellungen → Websites → Standort</em> → diese Seite auf «Erlauben» setzen</div></div>
+              <div class="step"><div class="step-num">4</div><div class="step-text">In Chrome: Klicke auf das Schloss-Icon in der Adressleiste → <em>Standort → Zulassen</em></div></div>
+              <div class="step"><div class="step-num">5</div><div class="step-text">Lade diese Seite neu</div></div>
+            </div>
+
+            <div class="platform-help" id="help-linux">
+              <div class="step"><div class="step-num">1</div><div class="step-text">Stelle sicher, dass der <em>geoclue</em>-Dienst läuft: <em>sudo systemctl status geoclue</em></div></div>
+              <div class="step"><div class="step-num">2</div><div class="step-text">Unter GNOME: <em>Einstellungen → Datenschutz → Standortdienste</em> aktivieren</div></div>
+              <div class="step"><div class="step-num">3</div><div class="step-text">Unter KDE: <em>Systemeinstellungen → Standort</em> aktivieren</div></div>
+              <div class="step"><div class="step-num">4</div><div class="step-text">Erlaube im Browser (Klick auf Schloss-Icon → Berechtigungen → Standort → Zulassen)</div></div>
+              <div class="step"><div class="step-num">5</div><div class="step-text">Hinweis: Ohne GPS-Hardware wird WLAN/IP-basierte Ortung genutzt. Genauigkeit ca. 50–500m</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Setup Card -->
+  <div class="card" id="setupCard">
+    <div class="card-label">01 — KML Datei laden</div>
+    <div class="file-drop" id="fileDrop">
+      <div class="emoji">📂</div>
+      <div class="label" id="fileLabel">KML-Datei auswählen</div>
+      <div class="sub">Tippe hier oder ziehe eine .kml Datei</div>
+      <input type="file" id="fileInput" accept=".kml,.kmz">
+    </div>
+    <div id="pointsBadge" class="badge hidden">
+      <span>●</span> <span id="pointsCount">0</span> Punkte geladen
+    </div>
+    <button class="default-retry hidden" id="kmlRetry">↻ Standard-KML laden</button>
+  </div>
+
+  <!-- Guide Text Card (optional) -->
+  <div class="card" id="mdCard">
+    <div class="card-label">02 — Guide-Texte (optional)</div>
+    <div class="file-drop" id="mdDrop">
+      <div class="emoji">📖</div>
+      <div class="label" id="mdLabel">MD-Datei auswählen</div>
+      <div class="sub">Optional: Texte zu den Punkten (.md) — werden beim Alarm vorgelesen</div>
+      <input type="file" id="mdInput" accept=".md,.markdown,.txt">
+    </div>
+    <div id="mdBadge" class="badge hidden">
+      <span>●</span> <span id="mdCount">0</span> Texte geladen<span id="mdMatch"></span>
+    </div>
+    <button class="default-retry hidden" id="mdRetry">↻ Standard-Guide laden</button>
+    <div class="voice-row hidden" id="voiceRow">
+      <select id="voiceSelect" title="Stimme für die Sprachausgabe"></select>
+      <button type="button" id="voiceTestBtn">🔊 Test</button>
+    </div>
+    <div class="voice-hint hidden" id="voiceHint"></div>
+  </div>
+
+  <div class="card" id="radiusCard">
+    <div class="card-label">03 — Alarmradius</div>
+    <div class="slider-wrap">
+      <div class="slider-header">
+        <span>Entfernung</span>
+        <span class="val" id="radiusVal">1.0 km</span>
+      </div>
+      <input type="range" id="radiusSlider" min="0" max="100" value="30">
+      <div class="slider-labels">
+        <span>500m</span>
+        <span>1km</span>
+        <span>2km</span>
+        <span>5km</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="controlCard">
+    <button class="btn btn-primary" id="startBtn" disabled>Tracking starten</button>
+    <button class="btn btn-stop hidden" id="stopBtn">Tracking stoppen</button>
+  </div>
+
+  <!-- Category Filter (only shown if categories detected) -->
+  <div class="card filter-card hidden" id="filterCard">
+    <div class="card-label">Kategorien filtern</div>
+    <div class="filter-wrap" id="filterWrap"></div>
+    <div class="filter-summary" id="filterSummary"></div>
+  </div>
+
+  <!-- Tracking View -->
+  <div class="card hidden" id="statusCard">
+    <div class="card-label">Status</div>
+    <div class="status-bar status-idle" id="statusBar">
+      <div class="dot"></div>
+      <span id="statusText">Warte auf GPS…</span>
+    </div>
+    <div class="gps-info">
+      <div class="gps-box">
+        <div class="lbl">Breitengrad</div>
+        <div class="val" id="latVal">—</div>
+      </div>
+      <div class="gps-box">
+        <div class="lbl">Längengrad</div>
+        <div class="val" id="lngVal">—</div>
+      </div>
+      <div class="gps-box">
+        <div class="lbl">Genauigkeit</div>
+        <div class="val" id="accVal">—</div>
+      </div>
+      <div class="gps-box">
+        <div class="lbl">Letztes Update</div>
+        <div class="val" id="timeVal">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card hidden" id="nearbyCard">
+    <div class="card-label">Nächste Punkte</div>
+    <div class="nearby-list" id="nearbyList"></div>
+  </div>
+
+  <div class="card hidden" id="logCard">
+    <div class="card-label">Ereignis-Log</div>
+    <div class="log" id="logBox"></div>
+  </div>
+</div>
+
+<!-- Fullscreen Alarm Overlay -->
+<div class="alarm-overlay hidden" id="alarmOverlay">
+  <div class="alarm-icon">🔔</div>
+  <div class="alarm-title">Punkt in Reichweite</div>
+  <div class="alarm-name" id="alarmName">—</div>
+  <div class="alarm-dist" id="alarmDist">—</div>
+  <div class="alarm-speaking hidden" id="alarmSpeaking"><span class="spk-dot"></span> Wird vorgelesen…</div>
+  <div class="alarm-text hidden" id="alarmText"></div>
+  <button class="alarm-dismiss" id="alarmDismiss">Verstanden</button>
+  <div class="alarm-multiple hidden" id="alarmMultiple"></div>
+</div>
+
+<script>
+(function() {
+  // State
+  let points = [];
+  let radius = 1000; // meters
+  let watchId = null;
+  let intervalId = null;
+  let currentPos = null;
+  let alertedPoints = new Set();
+  let audioCtx = null;
+  let isTracking = false;
+  let gpsPermission = 'unknown'; // unknown, granted, denied, prompt, unavailable
+  let alarmActive = false;
+  let alarmVibrationTimer = null;
+  let alarmSoundTimer = null; // NEU: wiederholender Sound-Timer
+  let pendingAlarmPoints = []; // points waiting to be dismissed
+  let expandedPointIndex = null; // which point index is currently expanded
+  let renderPausedUntil = 0; // timestamp until which list re-rendering is paused
+  let categories = {}; // detected categories: { key: { label, color, bg, count } }
+  let activeFilters = new Set(); // which categories are active (empty = all)
+  let hasCategories = false;
+  let colorAssignment = {}; // maps category key to color index
+  let mdBlocks = {}; // normalized name -> { title, text }
+  let mdArticleCount = 0; // Anzahl einzigartiger Textblöcke
+  let speakingIdx = null; // Punkt-Index, der gerade vorgelesen wird
+  let speechToken = 0; // Schutz gegen veraltete onend-Events nach cancel()
+  const speechSupported = 'speechSynthesis' in window;
+
+  // Dynamic color palette — 12 distinct, high-contrast colors
+  const COLOR_PALETTE = [
+    { color: '#ef4444', bg: 'rgba(239,68,68,0.18)' },   // rot
+    { color: '#10b981', bg: 'rgba(16,185,129,0.18)' },   // grün
+    { color: '#3b82f6', bg: 'rgba(59,130,246,0.18)' },   // blau
+    { color: '#f59e0b', bg: 'rgba(245,158,11,0.18)' },   // orange
+    { color: '#8b5cf6', bg: 'rgba(139,92,246,0.18)' },   // violett
+    { color: '#06b6d4', bg: 'rgba(6,182,212,0.18)' },    // cyan
+    { color: '#f43f5e', bg: 'rgba(244,63,94,0.18)' },    // rosa
+    { color: '#eab308', bg: 'rgba(234,179,8,0.18)' },    // gelb
+    { color: '#14b8a6', bg: 'rgba(20,184,166,0.18)' },   // teal
+    { color: '#a855f7', bg: 'rgba(168,85,247,0.18)' },   // lila
+    { color: '#0ea5e9', bg: 'rgba(14,165,233,0.18)' },   // hellblau
+    { color: '#22c55e', bg: 'rgba(34,197,94,0.18)' },    // hellgrün
+  ];
+  const FALLBACK_COLOR = { color: '#64748b', bg: 'rgba(100,116,139,0.18)' };
+
+  // DOM
+  const fileDrop = document.getElementById('fileDrop');
+  const fileInput = document.getElementById('fileInput');
+  const fileLabel = document.getElementById('fileLabel');
+  const pointsBadge = document.getElementById('pointsBadge');
+  const pointsCount = document.getElementById('pointsCount');
+  const radiusSlider = document.getElementById('radiusSlider');
+  const radiusVal = document.getElementById('radiusVal');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const statusCard = document.getElementById('statusCard');
+  const nearbyCard = document.getElementById('nearbyCard');
+  const logCard = document.getElementById('logCard');
+  const statusBar = document.getElementById('statusBar');
+  const statusText = document.getElementById('statusText');
+  const latVal = document.getElementById('latVal');
+  const lngVal = document.getElementById('lngVal');
+  const accVal = document.getElementById('accVal');
+  const timeVal = document.getElementById('timeVal');
+  const nearbyList = document.getElementById('nearbyList');
+  const logBox = document.getElementById('logBox');
+
+  // GPS permission DOM
+  const gpsCard = document.getElementById('gpsCard');
+  const gpsIcon = document.getElementById('gpsIcon');
+  const gpsTitle = document.getElementById('gpsTitle');
+  const gpsMsg = document.getElementById('gpsMsg');
+  const recheckBtn = document.getElementById('recheckBtn');
+  const requestBtn = document.getElementById('requestBtn');
+  const helpSection = document.getElementById('helpSection');
+  const helpToggle = document.getElementById('helpToggle');
+  const helpPanel = document.getElementById('helpPanel');
+  const platformTabs = document.getElementById('platformTabs');
+
+  // Alarm overlay DOM
+  const alarmOverlay = document.getElementById('alarmOverlay');
+  const alarmName = document.getElementById('alarmName');
+  const alarmDist = document.getElementById('alarmDist');
+  const alarmDismiss = document.getElementById('alarmDismiss');
+  const alarmMultiple = document.getElementById('alarmMultiple');
+  const alarmText = document.getElementById('alarmText');
+  const alarmSpeaking = document.getElementById('alarmSpeaking');
+
+  // Guide MD DOM
+  const mdDrop = document.getElementById('mdDrop');
+  const mdInput = document.getElementById('mdInput');
+  const mdLabel = document.getElementById('mdLabel');
+  const mdBadge = document.getElementById('mdBadge');
+  const mdCount = document.getElementById('mdCount');
+  const mdMatch = document.getElementById('mdMatch');
+  const voiceRow = document.getElementById('voiceRow');
+  const voiceSelect = document.getElementById('voiceSelect');
+  const voiceTestBtn = document.getElementById('voiceTestBtn');
+  const voiceHint = document.getElementById('voiceHint');
+  const kmlRetry = document.getElementById('kmlRetry');
+  const mdRetry = document.getElementById('mdRetry');
+
+  // Filter DOM
+  const filterCard = document.getElementById('filterCard');
+  const filterWrap = document.getElementById('filterWrap');
+  const filterSummary = document.getElementById('filterSummary');
+
+  // ─── Platform detection ───
+  function detectPlatform() {
+    const ua = navigator.userAgent || '';
+    if (/iPhone|iPad|iPod/.test(ua)) return 'iphone';
+    if (/Android/.test(ua)) return 'android';
+    if (/Macintosh|Mac OS/.test(ua)) return 'mac';
+    if (/Windows/.test(ua)) return 'windows';
+    if (/Linux/.test(ua)) return 'linux';
+    return 'iphone'; // default
+  }
+
+  // Auto-select detected platform tab
+  function autoSelectPlatform() {
+    const detected = detectPlatform();
+    platformTabs.querySelectorAll('.platform-tab').forEach(tab => {
+      const p = tab.dataset.platform;
+      tab.classList.toggle('active', p === detected);
+      document.getElementById('help-' + p).classList.toggle('active', p === detected);
+    });
+  }
+
+  // Platform tab switching
+  platformTabs.addEventListener('click', (e) => {
+    const tab = e.target.closest('.platform-tab');
+    if (!tab) return;
+    platformTabs.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.platform-help').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('help-' + tab.dataset.platform).classList.add('active');
+  });
+
+  // Help toggle
+  helpToggle.addEventListener('click', () => {
+    helpToggle.classList.toggle('open');
+    helpPanel.classList.toggle('open');
+  });
+
+  // ─── GPS Permission Check ───
+  function updateGpsUI(state, title, msg, showHelp, showRecheck, showRequest) {
+    gpsIcon.className = 'status-icon ' + state;
+    const icons = { checking: '🛰️', granted: '✅', denied: '🚫', prompt: '📡', unavailable: '❌' };
+    gpsIcon.textContent = icons[state] || '🛰️';
+    gpsTitle.textContent = title;
+    gpsMsg.textContent = msg;
+    helpSection.classList.toggle('hidden', !showHelp);
+    recheckBtn.classList.toggle('hidden', !showRecheck);
+    requestBtn.classList.toggle('hidden', !showRequest);
+  }
+
+  async function checkGpsPermission() {
+    updateGpsUI('checking', 'GPS wird geprüft…', 'Standort-Berechtigung wird überprüft.', false, false, false);
+
+    // 1. Check if geolocation API exists
+    if (!navigator.geolocation) {
+      gpsPermission = 'unavailable';
+      updateGpsUI('unavailable',
+        'GPS nicht verfügbar',
+        'Dein Browser unterstützt keine Standortbestimmung. Bitte verwende einen modernen Browser wie Chrome, Firefox oder Safari.',
+        true, true, false);
+      autoSelectPlatform();
+      return;
+    }
+
+    // 2. Check Permissions API if available
+    if (navigator.permissions && navigator.permissions.query) {
+      try {
+        const result = await navigator.permissions.query({ name: 'geolocation' });
+        gpsPermission = result.state; // 'granted', 'denied', 'prompt'
+
+        // Listen for changes
+        result.addEventListener('change', () => {
+          gpsPermission = result.state;
+          applyPermissionState();
+        });
+
+        applyPermissionState();
+        return;
+      } catch(e) {
+        // Permissions API not supported for geolocation, fallback
+      }
+    }
+
+    // 3. Fallback: try to get position directly
+    try {
+      await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+          () => { gpsPermission = 'granted'; resolve(); },
+          (err) => {
+            if (err.code === 1) gpsPermission = 'denied';
+            else if (err.code === 2) gpsPermission = 'unavailable';
+            else gpsPermission = 'prompt';
+            resolve();
+          },
+          { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+        );
+      });
+    } catch(e) {
+      gpsPermission = 'prompt';
+    }
+
+    applyPermissionState();
+  }
+
+  function applyPermissionState() {
+    autoSelectPlatform();
+
+    switch (gpsPermission) {
+      case 'granted':
+        updateGpsUI('granted',
+          'GPS bereit ✓',
+          'Standort-Berechtigung ist erteilt. Du kannst das Tracking starten.',
+          false, false, false);
+        updateStartButton();
+        break;
+
+      case 'denied':
+        updateGpsUI('denied',
+          'GPS blockiert',
+          'Der Standortzugriff wurde verweigert. Du musst die Berechtigung in den Einstellungen manuell aktivieren.',
+          true, true, false);
+        break;
+
+      case 'prompt':
+        updateGpsUI('prompt',
+          'GPS Berechtigung nötig',
+          'Der Browser wird dich beim Start nach der Standort-Berechtigung fragen. Klicke auf «Berechtigung anfordern» oder starte direkt das Tracking.',
+          true, false, true);
+        updateStartButton();
+        break;
+
+      case 'unavailable':
+        updateGpsUI('unavailable',
+          'Standort nicht verfügbar',
+          'Der Standortdienst ist deaktiviert oder dein Gerät hat keinen GPS-Empfänger. Aktiviere den Standort in den Geräte-Einstellungen.',
+          true, true, false);
+        break;
+
+      default:
+        updateGpsUI('prompt',
+          'GPS Status unbekannt',
+          'Der Berechtigungs-Status konnte nicht ermittelt werden. Versuche das Tracking zu starten — der Browser fragt dann nach.',
+          true, false, true);
+        updateStartButton();
+    }
+  }
+
+  function updateStartButton() {
+    startBtn.disabled = points.length === 0;
+  }
+
+  // Request permission by triggering a position request
+  requestBtn.addEventListener('click', () => {
+    updateGpsUI('checking', 'Berechtigung wird angefragt…', 'Bitte erlaube den Standortzugriff im Browser-Dialog.', false, false, false);
+    navigator.geolocation.getCurrentPosition(
+      () => {
+        gpsPermission = 'granted';
+        applyPermissionState();
+      },
+      (err) => {
+        if (err.code === 1) gpsPermission = 'denied';
+        else if (err.code === 2) gpsPermission = 'unavailable';
+        else gpsPermission = 'prompt';
+        applyPermissionState();
+      },
+      { enableHighAccuracy: true, timeout: 15000 }
+    );
+  });
+
+  // Recheck button
+  recheckBtn.addEventListener('click', () => {
+    checkGpsPermission();
+  });
+
+  // Run initial check
+  checkGpsPermission();
+
+  // Logarithmic slider: 500m to 5000m
+  function sliderToRadius(v) {
+    const minLog = Math.log(500);
+    const maxLog = Math.log(5000);
+    return Math.exp(minLog + (v / 100) * (maxLog - minLog));
+  }
+
+  function formatDist(m) {
+    if (m < 1000) return Math.round(m) + ' m';
+    return (m / 1000).toFixed(1) + ' km';
+  }
+
+  // Radius slider
+  radiusSlider.addEventListener('input', () => {
+    radius = sliderToRadius(radiusSlider.value);
+    radiusVal.textContent = formatDist(radius);
+  });
+  // Init display
+  radius = sliderToRadius(30);
+  radiusVal.textContent = formatDist(radius);
+
+  // File handling
+  fileDrop.addEventListener('click', () => fileInput.click());
+  fileDrop.addEventListener('dragover', (e) => { e.preventDefault(); fileDrop.classList.add('dragover'); });
+  fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
+  fileDrop.addEventListener('drop', (e) => {
+    e.preventDefault();
+    fileDrop.classList.remove('dragover');
+    if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) loadFile(fileInput.files[0]);
+  });
+
+  function applyKmlText(text, sourceName) {
+    parseKML(text);
+    if (points.length === 0) {
+      throw new Error('Keine Punkte gefunden — ist die Datei korrekt und öffentlich freigegeben?');
+    }
+    fileDrop.classList.add('loaded');
+    fileLabel.textContent = sourceName;
+    fileDrop.querySelector('.sub').textContent = 'Datei geladen ✓';
+    fileDrop.querySelector('.emoji').textContent = '✅';
+    pointsBadge.classList.remove('hidden');
+    pointsCount.textContent = points.length;
+    updateStartButton();
+    addLog('📂 ' + points.length + ' Punkte aus ' + sourceName + ' geladen');
+  }
+
+  function loadFile(file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        applyKmlText(e.target.result, file.name);
+      } catch (err) {
+        alert('Fehler beim Lesen der KML-Datei: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function parseKML(text) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, 'text/xml');
+    const placemarks = xml.querySelectorAll('Placemark');
+    points = [];
+
+    placemarks.forEach(pm => {
+      const nameEl = pm.querySelector('name');
+      const name = nameEl ? nameEl.textContent.trim() : 'Unbenannt';
+
+      // Try Point coordinates
+      const coordEl = pm.querySelector('Point coordinates');
+      if (coordEl) {
+        const parts = coordEl.textContent.trim().split(',');
+        if (parts.length >= 2) {
+          const point = {
+            name: name,
+            lng: parseFloat(parts[0]),
+            lat: parseFloat(parts[1]),
+            alerted: false,
+            meta: {} // all extra data
+          };
+
+          // Description (can contain HTML)
+          const descEl = pm.querySelector('description');
+          if (descEl && descEl.textContent.trim()) {
+            point.meta['Beschreibung'] = descEl.textContent.trim();
+          }
+
+          // Address
+          const addrEl = pm.querySelector('address');
+          if (addrEl && addrEl.textContent.trim()) {
+            point.meta['Adresse'] = addrEl.textContent.trim();
+          }
+
+          // Phone
+          const phoneEl = pm.querySelector('phoneNumber');
+          if (phoneEl && phoneEl.textContent.trim()) {
+            point.meta['Telefon'] = phoneEl.textContent.trim();
+          }
+
+          // Snippet
+          const snippetEl = pm.querySelector('Snippet');
+          if (snippetEl && snippetEl.textContent.trim()) {
+            point.meta['Kurzinfo'] = snippetEl.textContent.trim();
+          }
+
+          // ExtendedData > Data elements
+          const dataEls = pm.querySelectorAll('ExtendedData Data');
+          dataEls.forEach(d => {
+            const key = d.getAttribute('name') || 'Info';
+            const valEl = d.querySelector('value');
+            if (valEl && valEl.textContent.trim()) {
+              point.meta[key] = valEl.textContent.trim();
+            }
+          });
+
+          // ExtendedData > SimpleData (from Schema-based KML)
+          const simpleDataEls = pm.querySelectorAll('ExtendedData SchemaData SimpleData');
+          simpleDataEls.forEach(sd => {
+            const key = sd.getAttribute('name') || 'Info';
+            if (sd.textContent.trim()) {
+              point.meta[key] = sd.textContent.trim();
+            }
+          });
+
+          // Altitude if present
+          if (parts.length >= 3 && parseFloat(parts[2]) !== 0) {
+            point.meta['Höhe'] = Math.round(parseFloat(parts[2])) + ' m';
+          }
+
+          // Coordinates for reference
+          point.meta['Koordinaten'] = parseFloat(parts[1]).toFixed(6) + ', ' + parseFloat(parts[0]).toFixed(6);
+
+          // ─── Category detection ───
+          // Priority: emergency > amenity > healthcare
+          const catKey = detectCategory(point.meta);
+          point.category = catKey;
+
+          points.push(point);
+        }
+      }
+    });
+
+    // Build category index
+    buildCategories();
+    updateMdMatchInfo();
+  }
+
+  // ─── Guide-Texte (MD-Datei, optional) ───
+  mdDrop.addEventListener('click', () => mdInput.click());
+  mdDrop.addEventListener('dragover', (e) => { e.preventDefault(); mdDrop.classList.add('dragover'); });
+  mdDrop.addEventListener('dragleave', () => mdDrop.classList.remove('dragover'));
+  mdDrop.addEventListener('drop', (e) => {
+    e.preventDefault();
+    mdDrop.classList.remove('dragover');
+    if (e.dataTransfer.files.length) loadMdFile(e.dataTransfer.files[0]);
+  });
+  mdInput.addEventListener('change', () => {
+    if (mdInput.files.length) loadMdFile(mdInput.files[0]);
+  });
+
+  function applyMdText(text, sourceName) {
+    parseMarkdown(text);
+    const total = mdArticleCount;
+    if (total === 0) throw new Error('Keine Textblöcke gefunden (Überschriften mit # erwartet).');
+    mdDrop.classList.add('loaded');
+    mdLabel.textContent = sourceName;
+    mdDrop.querySelector('.sub').textContent = 'Guide geladen ✓';
+    mdDrop.querySelector('.emoji').textContent = '✅';
+    mdBadge.classList.remove('hidden');
+    mdCount.textContent = total;
+    updateMdMatchInfo();
+    addLog('📖 ' + total + ' Guide-Texte aus ' + sourceName + ' geladen');
+  }
+
+  function loadMdFile(file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        applyMdText(e.target.result, file.name);
+      } catch (err) {
+        alert('Fehler beim Lesen der MD-Datei: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  // ─── Standard-Dateien automatisch laden ───
+  // URLs hier anpassen. Wichtig: Der Browser darf nur Quellen laden, die CORS
+  // erlauben — GitHub (raw.githubusercontent.com / *.github.io) funktioniert
+  // zuverlässig. Google-Drive-Links werden direkt blockiert, darum versucht
+  // die App sie als Fallback über einen öffentlichen CORS-Proxy zu laden.
+  const DEFAULT_KML_URL = 'https://drive.google.com/uc?export=download&id=1HBYq4VuTCOsRbPk-yKNfZv6ISmd3JtYh';
+  const DEFAULT_MD_URL  = 'https://drive.google.com/uc?export=download&id=1pnwphYpKMI3Z5V3mejbcRrug-lP1_2cw';
+  const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+
+  async function fetchTextWithFallback(url) {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.text();
+    } catch (e) {
+      addLog('↪ Direkter Zugriff blockiert (CORS) — versuche Proxy…');
+      const r = await fetch(CORS_PROXY + encodeURIComponent(url));
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.text();
+    }
+  }
+
+  function setDropLoading(drop, labelEl, text) {
+    labelEl.textContent = text;
+    drop.querySelector('.sub').textContent = 'Bitte warten…';
+    drop.querySelector('.emoji').textContent = '⏳';
+  }
+
+  function setDropFailed(drop, labelEl, defaultLabel, retryBtn, msg) {
+    labelEl.textContent = defaultLabel;
+    drop.querySelector('.sub').textContent = 'Standard-Laden fehlgeschlagen — bitte manuell wählen';
+    drop.querySelector('.emoji').textContent = '📂';
+    retryBtn.classList.remove('hidden');
+    addLog('⚠️ ' + msg);
+  }
+
+  async function loadDefaultKml() {
+    if (!DEFAULT_KML_URL || fileDrop.classList.contains('loaded')) return;
+    kmlRetry.classList.add('hidden');
+    setDropLoading(fileDrop, fileLabel, 'Lade Standard-KML…');
+    try {
+      const text = await fetchTextWithFallback(DEFAULT_KML_URL);
+      if (fileDrop.classList.contains('loaded')) return; // Nutzer war schneller
+      applyKmlText(text, 'Standard-KML');
+    } catch (e) {
+      setDropFailed(fileDrop, fileLabel, 'KML-Datei auswählen', kmlRetry,
+        'Standard-KML konnte nicht geladen werden (' + e.message + ')');
+    }
+  }
+
+  async function loadDefaultMd() {
+    if (!DEFAULT_MD_URL || mdDrop.classList.contains('loaded')) return;
+    mdRetry.classList.add('hidden');
+    setDropLoading(mdDrop, mdLabel, 'Lade Standard-Guide…');
+    try {
+      const text = await fetchTextWithFallback(DEFAULT_MD_URL);
+      if (mdDrop.classList.contains('loaded')) return; // Nutzer war schneller
+      applyMdText(text, 'Standard-Guide');
+    } catch (e) {
+      setDropFailed(mdDrop, mdLabel, 'MD-Datei auswählen', mdRetry,
+        'Standard-Guide konnte nicht geladen werden (' + e.message + ')');
+    }
+  }
+
+  kmlRetry.addEventListener('click', (e) => { e.stopPropagation(); loadDefaultKml(); });
+  mdRetry.addEventListener('click', (e) => { e.stopPropagation(); loadDefaultMd(); });
+
+  // Beim Start automatisch laden
+  loadDefaultKml();
+  loadDefaultMd();
+
+  // MD einlesen — zwei Strategien:
+  // 1) POI-Handbuch: nummerierte Überschriften "## 12. Name" mit YAML-Block
+  //    (Name aus dem YAML-Feld "name:" ist der Sammlungsname = KML-Name)
+  // 2) Generisch: jede Überschrift (# bis ######) startet einen Textblock
+  function parseMarkdown(text) {
+    mdBlocks = {};
+    mdArticleCount = 0;
+
+    // ─── Strategie 1: nummerierte Punkt-Artikel ───
+    const pointRe = /^##\s+\d+\.\s+(.+?)\s*$/gm;
+    const matches = [...text.matchAll(pointRe)];
+
+    if (matches.length >= 3) {
+      matches.forEach((m, i) => {
+        const start = m.index + m[0].length;
+        // Block endet am nächsten Punkt-Artikel oder an einer H1-Überschrift
+        let end = (i + 1 < matches.length) ? matches[i + 1].index : text.length;
+        const h1pos = text.slice(start, end).search(/^#\s+/m);
+        if (h1pos >= 0) end = start + h1pos;
+
+        let body = text.slice(start, end);
+        let yamlName = null;
+        // YAML-Schlüsselblock entfernen, Name daraus merken
+        body = body.replace(/```ya?ml\s*\n([\s\S]*?)```/, (full, y) => {
+          const nm = y.match(/^name:\s*"?(.*?)"?\s*$/m);
+          if (nm) yamlName = nm[1].trim();
+          return '';
+        }).trim();
+        if (!body) return;
+
+        const block = { title: m[1].trim(), text: body };
+        const keyHeading = normalizeName(m[1]);
+        if (keyHeading && !mdBlocks[keyHeading]) mdBlocks[keyHeading] = block;
+        if (yamlName) {
+          const keyYaml = normalizeName(yamlName);
+          if (keyYaml) mdBlocks[keyYaml] = block; // YAML-Name = exakter KML-Name
+        }
+        mdArticleCount++;
+      });
+      return;
+    }
+
+    // ─── Strategie 2: generisch, jede Überschrift = Block ───
+    const lines = text.split(/\r?\n/);
+    const headingRe = /^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$/;
+    let currentTitle = null;
+    let buffer = [];
+
+    function flush() {
+      if (currentTitle === null) return;
+      const body = buffer.join('\n').trim();
+      buffer = [];
+      if (!body) return;
+      const key = normalizeName(currentTitle);
+      if (!key) return;
+      if (mdBlocks[key]) {
+        mdBlocks[key].text += '\n\n' + body; // doppelte Überschrift: anhängen
+      } else {
+        mdBlocks[key] = { title: currentTitle, text: body };
+        mdArticleCount++;
+      }
+    }
+
+    lines.forEach(line => {
+      const m = line.match(headingRe);
+      if (m) {
+        flush();
+        currentTitle = m[1].trim();
+      } else if (currentTitle !== null) {
+        buffer.push(line);
+      }
+    });
+    flush();
+  }
+
+  // Namen normalisieren für robusten Abgleich KML-Punkt ↔ MD-Überschrift
+  function normalizeName(s) {
+    return (s || '')
+      .toLowerCase()
+      .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '');
+  }
+
+  // Textblock zu einem Punktnamen finden:
+  // exakt → Enthaltensein → Ähnlichkeit (Levenshtein, für kleine Abweichungen)
+  function findMdBlock(name) {
+    const key = normalizeName(name);
+    if (!key) return null;
+    if (mdBlocks[key]) return mdBlocks[key];
+
+    // Enthaltensein (längster Treffer gewinnt)
+    let bestKey = null;
+    for (const k of Object.keys(mdBlocks)) {
+      if (k.length >= 4 && (key.includes(k) || k.includes(key))) {
+        if (!bestKey || k.length > bestKey.length) bestKey = k;
+      }
+    }
+    if (bestKey) return mdBlocks[bestKey];
+
+    // Ähnlichkeitssuche (z.B. «Corrimoney» ↔ «Corrimony»)
+    let bestSim = 0;
+    bestKey = null;
+    for (const k of Object.keys(mdBlocks)) {
+      if (k.length < 4) continue;
+      const sim = 1 - levenshtein(key, k) / Math.max(key.length, k.length);
+      if (sim > bestSim) { bestSim = sim; bestKey = k; }
+    }
+    return (bestKey && bestSim >= 0.85) ? mdBlocks[bestKey] : null;
+  }
+
+  function levenshtein(a, b) {
+    const m = a.length, n = b.length;
+    if (!m) return n;
+    if (!n) return m;
+    let prev = Array.from({ length: n + 1 }, (_, i) => i);
+    for (let i = 1; i <= m; i++) {
+      const cur = [i];
+      for (let j = 1; j <= n; j++) {
+        cur[j] = Math.min(
+          prev[j] + 1,
+          cur[j - 1] + 1,
+          prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+        );
+      }
+      prev = cur;
+    }
+    return prev[n];
+  }
+
+  function updateMdMatchInfo() {
+    if (Object.keys(mdBlocks).length === 0 || points.length === 0) {
+      mdMatch.textContent = '';
+      return;
+    }
+    const matched = points.filter(p => findMdBlock(p.name)).length;
+    mdMatch.textContent = ' · ' + matched + ' Punkten zugeordnet';
+  }
+
+  // Markdown → Fliesstext für die Sprachausgabe
+  function mdToPlain(md) {
+    return md
+      .replace(/```[\s\S]*?```/g, ' ')                      // Codeblöcke (z.B. YAML) weglassen
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')                // Bilder
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')              // Links → Linktext
+      .replace(/^\s{0,3}#{1,6}\s+(.+?)\s*$/gm, '$1. ')      // Zwischentitel ankündigen
+      .replace(/<[^>]+>/g, ' ')                             // HTML-Tags
+      .replace(/^[\s]*[-*+•]\s+/gm, '')                     // Listenmarker
+      .replace(/[*_`~#>]+/g, ' ')                           // Formatierung
+      .replace(/\|/g, ' ')                                  // Tabellen-Pipes
+      // ─── Aussprache-Hilfen ───
+      .replace(/\s*&\s*/g, ' und ')
+      .replace(/\bz\.\s?B\./g, 'zum Beispiel')
+      .replace(/\bu\.\s?a\./g, 'unter anderem')
+      .replace(/\bbzw\./g, 'beziehungsweise')
+      .replace(/\busw\./g, 'und so weiter')
+      .replace(/\bca\./g, 'circa')
+      .replace(/\bd\.\s?h\./g, 'das heisst')
+      .replace(/\bSt\.\s(?=[A-ZÄÖÜ])/g, 'Sankt ')
+      .replace(/([^\s.!?:;…])\s*\n/g, '$1. ')               // Zeilen ohne Satzende → Punkt
+      .replace(/\s*\n\s*/g, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
+  // Markdown → einfaches HTML für die Anzeige
+  function mdToHtml(md) {
+    let html = escapeHtml(md);
+    html = html.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
+    html = html.replace(/^\s{0,3}#{1,6}\s+(.+?)\s*$/gm, '<strong>$1</strong>');
+    html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    return html.split(/\n{2,}/)
+      .map(p => '<p>' + p.replace(/\n/g, '<br>') + '</p>')
+      .join('');
+  }
+
+  // ─── Sprachausgabe (Text-to-Speech) ───
+  let availableVoices = [];
+  let selectedVoiceURI = null;
+  try { selectedVoiceURI = localStorage.getItem('ttsVoiceURI') || null; } catch(e) {}
+
+  // Stimmen bewerten: deutsche Stimmen zuerst, «natürliche»/Online-Stimmen
+  // bevorzugt — sie beherrschen englische Eigennamen deutlich besser
+  function voiceScore(v) {
+    const lang = (v.lang || '').toLowerCase();
+    const name = (v.name || '').toLowerCase();
+    let s = 0;
+    if (lang.indexOf('de') === 0) s += 100;
+    if (lang === 'de-ch') s += 5;
+    if (/natural|neural/.test(name)) s += 40;
+    if (/online/.test(name)) s += 30;
+    if (/google/.test(name)) s += 25;
+    if (/siri/.test(name)) s += 25;
+    if (/premium|enhanced/.test(name)) s += 20;
+    if (!v.localService) s += 10; // Server-Stimmen klingen meist besser
+    return s;
+  }
+
+  function getSelectedVoice() {
+    return availableVoices.find(v => v.voiceURI === selectedVoiceURI) || null;
+  }
+
+  function populateVoiceSelect() {
+    availableVoices = speechSynthesis.getVoices();
+    if (!availableVoices.length) return; // Browser liefert sie erst per Event
+
+    // Nur deutsche Stimmen anbieten (weibliche wie männliche) —
+    // die Auswahl hängt davon ab, welche Stimmen das Gerät installiert hat
+    const german = availableVoices.filter(v => (v.lang || '').toLowerCase().indexOf('de') === 0);
+    const list = (german.length ? german : availableVoices)
+      .slice()
+      .sort((a, b) => voiceScore(b) - voiceScore(a));
+
+    voiceSelect.innerHTML = list.map(v =>
+      '<option value="' + escapeHtml(v.voiceURI) + '">' +
+      escapeHtml(v.name) + ' (' + escapeHtml(v.lang) + ')</option>'
+    ).join('');
+    const stored = selectedVoiceURI && list.find(v => v.voiceURI === selectedVoiceURI);
+    const def = stored || list[0];
+    if (def) {
+      voiceSelect.value = def.voiceURI;
+      selectedVoiceURI = def.voiceURI;
+    }
+
+    // Hinweis anzeigen, wenn nur eine (oder keine) deutsche Stimme vorhanden ist
+    if (german.length <= 1) {
+      voiceHint.innerHTML = voiceInstallHint();
+      voiceHint.classList.remove('hidden');
+    } else {
+      voiceHint.classList.add('hidden');
+    }
+  }
+
+  // Plattformabhängiger Hinweis, wie weitere deutsche Stimmen installiert werden
+  function voiceInstallHint() {
+    const p = detectPlatform();
+    const hints = {
+      iphone: 'Auf Deinem Gerät ist nur eine deutsche Stimme installiert. Weitere (auch weibliche) findest Du unter <em>Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → Deutsch</em> — lade dort z. B. eine Siri-Stimme herunter und lade diese Seite neu.',
+      mac: 'Auf Deinem Mac ist nur eine deutsche Stimme installiert. Weitere (auch weibliche) findest Du unter <em>Systemeinstellungen → Bedienungshilfen → Gesprochene Inhalte → Systemstimme → Stimmen verwalten</em> — danach diese Seite neu laden.',
+      android: 'Auf Deinem Gerät ist nur eine deutsche Stimme installiert. Weitere findest Du unter <em>Einstellungen → System → Sprachen & Eingabe → Text-in-Sprache-Ausgabe</em> (Google Sprachausgabe) — danach diese Seite neu laden.',
+      windows: 'Auf Deinem PC ist nur eine deutsche Stimme installiert. Weitere (auch weibliche) findest Du unter <em>Einstellungen → Zeit & Sprache → Sprache & Region → Deutsch</em>. Tipp: Im Browser Microsoft Edge stehen zusätzlich viele natürliche Online-Stimmen zur Verfügung.',
+      linux: 'Auf Deinem System ist nur eine deutsche Stimme installiert. Weitere Stimmen kannst Du z. B. über <em>speech-dispatcher</em> / <em>RHVoice</em> installieren — danach diese Seite neu laden.'
+    };
+    return '💡 ' + (hints[p] || hints.iphone);
+  }
+
+  if (speechSupported) {
+    voiceRow.classList.remove('hidden');
+    populateVoiceSelect();
+    speechSynthesis.addEventListener('voiceschanged', populateVoiceSelect);
+    voiceSelect.addEventListener('change', () => {
+      selectedVoiceURI = voiceSelect.value;
+      try { localStorage.setItem('ttsVoiceURI', selectedVoiceURI); } catch(e) {}
+    });
+    voiceTestBtn.addEventListener('click', () => {
+      speakText('So klingt die gewählte Stimme. Dunvegan Castle, Loch Ness und der Caledonian Canal sollten damit verständlich sein.');
+    });
+  }
+
+  // Text in sprechbare Häppchen zerlegen (an Satz- und Teilsatzgrenzen) —
+  // vermeidet Abbrüche bei langen Texten und wirkt natürlicher
+  function splitForSpeech(text) {
+    const clauses = text.match(/[^.!?…,;:]+[.!?…,;:]+[»")\]]*\s*|[^.!?…,;:]+$/g) || [text];
+    const chunks = [];
+    let cur = '';
+    clauses.forEach(s => {
+      if (cur && (cur + s).length > 200) { chunks.push(cur.trim()); cur = s; }
+      else cur += s;
+    });
+    if (cur.trim()) chunks.push(cur.trim());
+    return chunks;
+  }
+
+  // Chrome-Bug-Workaround: Netzwerk-Stimmen stoppen nach ~15s —
+  // regelmässiges resume() hält die Wiedergabe am Laufen
+  let resumeTimer = null;
+  function startResumePing() {
+    stopResumePing();
+    resumeTimer = setInterval(() => {
+      if (speechSupported && speechSynthesis.speaking) speechSynthesis.resume();
+    }, 8000);
+  }
+  function stopResumePing() {
+    if (resumeTimer) { clearInterval(resumeTimer); resumeTimer = null; }
+  }
+
+  function speakText(text, title, idx) {
+    if (!speechSupported || !text) return;
+    try {
+      speechSynthesis.cancel();
+      resetSpeakUI();
+      const token = ++speechToken;
+      const voice = getSelectedVoice();
+      const lang = voice ? voice.lang : 'de-CH';
+      const chunks = splitForSpeech((title ? title + '. ' : '') + text);
+
+      chunks.forEach((chunk, i) => {
+        const utter = new SpeechSynthesisUtterance(chunk);
+        utter.lang = lang;
+        utter.rate = 0.95;
+        utter.pitch = 1;
+        if (voice) utter.voice = voice;
+        if (i === chunks.length - 1) {
+          utter.onend = () => { if (token === speechToken) resetSpeakUI(); };
+          utter.onerror = () => { if (token === speechToken) resetSpeakUI(); };
+        }
+        speechSynthesis.speak(utter);
+      });
+      startResumePing();
+
+      if (idx !== undefined && idx !== null) {
+        // Aufruf aus dem Detail-Panel: Button als Statusanzeige nutzen
+        speakingIdx = idx;
+        const btn = nearbyList.querySelector('.speak-link[data-speak-idx="' + idx + '"]');
+        if (btn) {
+          btn.classList.add('speaking');
+          btn.innerHTML = '🔊 Wird vorgelesen… (tippen zum Stoppen)';
+        }
+      } else {
+        // Aufruf aus dem Alarm-Overlay
+        alarmSpeaking.classList.remove('hidden');
+      }
+    } catch(e) { console.log('TTS error', e); }
+  }
+
+  function resetSpeakUI() {
+    stopResumePing();
+    alarmSpeaking.classList.add('hidden');
+    if (speakingIdx !== null) {
+      const btn = nearbyList.querySelector('.speak-link[data-speak-idx="' + speakingIdx + '"]');
+      if (btn) {
+        btn.classList.remove('speaking');
+        btn.innerHTML = '📖 Guide-Text anzeigen &amp; vorlesen<span class="nav-arrow">▶</span>';
+      }
+      speakingIdx = null;
+    }
+  }
+
+  function stopSpeaking() {
+    speechToken++; // laufende Utterance-Events entwerten
+    if (speechSupported) speechSynthesis.cancel();
+    resetSpeakUI();
+  }
+
+  // Detect category from metadata — tries common KML grouping fields dynamically
+  function detectCategory(meta) {
+    // Priority order of fields to use for grouping
+    const groupFields = ['emergency', 'amenity', 'healthcare', 'type', 'category', 'Kategorie', 'gruppe', 'group', 'class'];
+    for (const field of groupFields) {
+      const val = meta[field];
+      if (val && val !== 'yes' && val !== 'no' && val !== 'multipolygon' && val !== 'center') {
+        return val;
+      }
+    }
+    return null;
+  }
+
+  // Get color config for a category key (assigns dynamically from palette)
+  function getCategoryColor(catKey) {
+    if (!catKey) return FALLBACK_COLOR;
+    if (colorAssignment[catKey] !== undefined) {
+      return COLOR_PALETTE[colorAssignment[catKey]] || FALLBACK_COLOR;
+    }
+    return FALLBACK_COLOR;
+  }
+
+  // Capitalize first letter for display label
+  function formatLabel(key) {
+    if (!key) return 'Sonstiges';
+    return key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ');
+  }
+
+  // Build category counts, assign colors, render filter chips
+  function buildCategories() {
+    categories = {};
+    colorAssignment = {};
+
+    // Count categories
+    points.forEach(p => {
+      const key = p.category || '_other';
+      if (!categories[key]) {
+        categories[key] = { label: formatLabel(p.category), count: 0, key: key };
+      }
+      categories[key].count++;
+    });
+
+    // Assign colors: sort by count descending, biggest groups get the most distinct colors
+    const sorted = Object.keys(categories).sort((a, b) => categories[b].count - categories[a].count);
+    sorted.forEach((key, i) => {
+      colorAssignment[key] = i < COLOR_PALETTE.length ? i : -1;
+      const col = i < COLOR_PALETTE.length ? COLOR_PALETTE[i] : FALLBACK_COLOR;
+      categories[key].color = col.color;
+      categories[key].bg = col.bg;
+    });
+
+    // Only show filters if there are at least 2 different categories with meaningful counts
+    const meaningfulCats = Object.values(categories).filter(c => c.count >= 2);
+    hasCategories = meaningfulCats.length >= 2;
+
+    if (hasCategories) {
+      filterCard.classList.remove('hidden');
+      activeFilters.clear();
+      renderFilterChips();
+    } else {
+      filterCard.classList.add('hidden');
+    }
+  }
+
+  function renderFilterChips() {
+    const sorted = Object.values(categories).sort((a, b) => b.count - a.count);
+
+    filterWrap.innerHTML = sorted.map(cat => {
+      const isActive = activeFilters.size === 0 || activeFilters.has(cat.key);
+      return '<button class="filter-chip ' + (isActive ? 'active' : '') + '" data-cat="' + cat.key + '" style="' +
+        (isActive ? 'border-color:' + cat.color + '; background:' + cat.bg + '; color:' + cat.color : '') + '">' +
+        '<span class="chip-dot" style="background:' + cat.color + '"></span>' +
+        '<span>' + escapeHtml(cat.label) + '</span>' +
+        '<span class="chip-count">' + cat.count + '</span>' +
+        '</button>';
+    }).join('');
+
+    updateFilterSummary();
+
+    filterWrap.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const cat = chip.getAttribute('data-cat');
+
+        if (activeFilters.size === 0) {
+          activeFilters.add(cat);
+        } else if (activeFilters.has(cat)) {
+          activeFilters.delete(cat);
+        } else {
+          activeFilters.add(cat);
+        }
+
+        if (activeFilters.size === Object.keys(categories).length) {
+          activeFilters.clear();
+        }
+
+        renderFilterChips();
+        renderPausedUntil = 0;
+        expandedPointIndex = null;
+      });
+    });
+  }
+
+  function updateFilterSummary() {
+    const total = points.length;
+    const filtered = getFilteredPoints().length;
+    if (activeFilters.size === 0) {
+      filterSummary.textContent = 'Alle ' + total + ' Punkte aktiv';
+    } else {
+      filterSummary.textContent = filtered + ' von ' + total + ' Punkten aktiv';
+    }
+  }
+
+  function getFilteredPoints() {
+    if (!hasCategories || activeFilters.size === 0) return points;
+    return points.filter(p => {
+      const key = p.category || '_other';
+      return activeFilters.has(key);
+    });
+  }
+
+  // Haversine distance
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371000;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+
+  // ─── Audio: Frühe Entsperrung auf jedem User-Gesture ───
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  function ensureAudioUnlocked() {
+    initAudio();
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume().catch(() => {});
+    }
+  }
+  // Bereits beim ersten Tippen/Klicken auf der Seite den AudioContext entsperren
+  document.addEventListener('click', ensureAudioUnlocked, { once: false, passive: true });
+  document.addEventListener('touchstart', ensureAudioUnlocked, { once: false, passive: true });
+
+  // ─── Audio Alert (verbessert) ───
+  function playAlertSound() {
+    try {
+      initAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
+
+      // Durchdringender Alarm: 3 scharfe Töne mit Square-Wave
+      // A5 (880 Hz), C#6 (1100 Hz), A5 (880 Hz) — schrill und auffällig
+      const notes = [880, 1100, 880];
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'square'; // Durchdringender als Sine
+        osc.frequency.value = freq;
+
+        // Laut: 0.95, kurze Attack-Zeit um Clipping zu vermeiden
+        const t = audioCtx.currentTime + i * 0.12;
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.95, t + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(t);
+        osc.stop(t + 0.35);
+      });
+    } catch(e) { console.log('Audio error', e); }
+  }
+
+  // Wiederholender Sound-Alarm, solange Overlay aktiv
+  function startRepeatingSound() {
+    playAlertSound(); // Sofort
+    alarmSoundTimer = setInterval(() => {
+      if (alarmActive) playAlertSound();
+    }, 1800); // Alle 1.8 Sekunden wiederholen
+  }
+
+  function stopRepeatingSound() {
+    if (alarmSoundTimer) {
+      clearInterval(alarmSoundTimer);
+      alarmSoundTimer = null;
+    }
+  }
+  function vibrate() {
+    if (!navigator.vibrate) return;
+    // Strong 3x repeated pattern: buzz-pause-buzz-pause-BUZZ (×3)
+    const singleBurst = [300, 100, 300, 100, 500, 200];
+    // Repeat 3 times
+    const pattern = [...singleBurst, ...singleBurst, ...singleBurst];
+    navigator.vibrate(pattern);
+  }
+
+  function startRepeatingVibration() {
+    vibrate();
+    // Repeat every 4.5 seconds until dismissed
+    alarmVibrationTimer = setInterval(() => {
+      vibrate();
+    }, 4500);
+  }
+
+  function stopRepeatingVibration() {
+    if (alarmVibrationTimer) {
+      clearInterval(alarmVibrationTimer);
+      alarmVibrationTimer = null;
+    }
+    if (navigator.vibrate) navigator.vibrate(0); // cancel immediately
+  }
+
+  // ─── Fullscreen Alarm ───
+  function showAlarm(pointsInRange) {
+    if (alarmActive) return; // already showing
+    alarmActive = true;
+    pendingAlarmPoints = pointsInRange;
+
+    const closest = pointsInRange[0];
+    const catKey = closest.category || '_other';
+    const catInfo = categories[catKey];
+    alarmName.textContent = closest.name;
+    alarmDist.textContent = formatDist(closest.distance) + ' entfernt';
+    if (catInfo && hasCategories) {
+      document.querySelector('.alarm-title').textContent = catInfo.label + ' in Reichweite';
+    } else {
+      document.querySelector('.alarm-title').textContent = 'Punkt in Reichweite';
+    }
+
+    if (pointsInRange.length > 1) {
+      alarmMultiple.textContent = '+ ' + (pointsInRange.length - 1) + ' weitere Punkte in Reichweite';
+      alarmMultiple.classList.remove('hidden');
+    } else {
+      alarmMultiple.classList.add('hidden');
+    }
+
+    alarmOverlay.classList.remove('hidden');
+
+    // Guide-Text aus MD-Datei anzeigen & vorlesen (falls vorhanden)
+    const guideBlock = findMdBlock(closest.name);
+    if (guideBlock) {
+      alarmText.innerHTML = mdToHtml(guideBlock.text);
+      alarmText.classList.remove('hidden');
+      alarmText.scrollTop = 0;
+      // Einmal Alarmton + Vibration, dann den Text vorlesen
+      startRepeatingVibration();
+      playAlertSound();
+      speakText(mdToPlain(guideBlock.text), closest.name);
+    } else {
+      alarmText.classList.add('hidden');
+      alarmSpeaking.classList.add('hidden');
+      // Start vibration + repeating sound
+      startRepeatingVibration();
+      startRepeatingSound();
+    }
+  }
+
+  function dismissAlarm() {
+    alarmActive = false;
+    alarmOverlay.classList.add('hidden');
+    stopRepeatingVibration();
+    stopRepeatingSound();
+    stopSpeaking();
+
+    // Mark all currently displayed alarm points as alerted
+    pendingAlarmPoints.forEach(p => {
+      alertedPoints.add(p.index);
+      addLog('✓ Bestätigt: ' + p.name);
+    });
+    pendingAlarmPoints = [];
+  }
+
+  alarmDismiss.addEventListener('click', dismissAlarm);
+
+  // Start tracking
+  startBtn.addEventListener('click', async () => {
+    if (!navigator.geolocation) {
+      alert('Geolocation wird von diesem Browser nicht unterstützt.');
+      return;
+    }
+
+    // If permission not yet granted, request it first
+    if (gpsPermission !== 'granted') {
+      try {
+        await new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(
+            () => { gpsPermission = 'granted'; applyPermissionState(); resolve(); },
+            (err) => {
+              if (err.code === 1) { gpsPermission = 'denied'; applyPermissionState(); reject(err); }
+              else if (err.code === 2) { gpsPermission = 'unavailable'; applyPermissionState(); reject(err); }
+              else { resolve(); } // timeout: try anyway
+            },
+            { enableHighAccuracy: true, timeout: 15000 }
+          );
+        });
+      } catch(e) {
+        addLog('⚠️ GPS Berechtigung verweigert');
+        return;
+      }
+    }
+
+    // Init audio context on user gesture
+    ensureAudioUnlocked();
+
+    isTracking = true;
+    alertedPoints.clear();
+
+    startBtn.classList.add('hidden');
+    stopBtn.classList.remove('hidden');
+    statusCard.classList.remove('hidden');
+    nearbyCard.classList.remove('hidden');
+    logCard.classList.remove('hidden');
+
+    setStatus('active', 'GPS wird gesucht…');
+    addLog('🚀 Tracking gestartet — Radius: ' + formatDist(radius));
+
+    // Watch position continuously
+    watchId = navigator.geolocation.watchPosition(
+      onPosition,
+      onError,
+      { enableHighAccuracy: true, timeout: 30000, maximumAge: 0 }
+    );
+
+    // Additionally poll every 2 minutes
+    intervalId = setInterval(() => {
+      navigator.geolocation.getCurrentPosition(onPosition, onError, {
+        enableHighAccuracy: true, timeout: 30000, maximumAge: 0
+      });
+    }, 120000);
+  });
+
+  // Stop tracking
+  stopBtn.addEventListener('click', () => {
+    isTracking = false;
+    if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+    if (intervalId !== null) { clearInterval(intervalId); intervalId = null; }
+    stopSpeaking();
+    if (alarmActive) dismissAlarm();
+
+    stopBtn.classList.add('hidden');
+    startBtn.classList.remove('hidden');
+    setStatus('idle', 'Tracking gestoppt');
+    addLog('⏹ Tracking gestoppt');
+  });
+
+  function onPosition(pos) {
+    if (!isTracking) return;
+    currentPos = { lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy };
+
+    latVal.textContent = currentPos.lat.toFixed(6);
+    lngVal.textContent = currentPos.lng.toFixed(6);
+    accVal.textContent = '±' + Math.round(currentPos.acc) + 'm';
+    timeVal.textContent = new Date().toLocaleTimeString('de-DE');
+
+    checkProximity();
+  }
+
+  function onError(err) {
+    setStatus('idle', 'GPS Fehler: ' + err.message);
+    addLog('⚠️ GPS Fehler: ' + err.message);
+  }
+
+  function checkProximity() {
+    if (!currentPos || points.length === 0) return;
+
+    // Calculate distances for ALL points (alerts should work regardless of filter)
+    const allWithDist = points.map((p, i) => ({
+      ...p,
+      index: i,
+      distance: haversine(currentPos.lat, currentPos.lng, p.lat, p.lng)
+    }));
+
+    // Filtered set for display
+    const filteredWithDist = allWithDist.filter(p => {
+      if (!hasCategories || activeFilters.size === 0) return true;
+      const key = p.category || '_other';
+      return activeFilters.has(key);
+    });
+    filteredWithDist.sort((a, b) => a.distance - b.distance);
+
+    // Alerts: only for filtered points
+    const newInRange = filteredWithDist.filter(p => p.distance <= radius && !alertedPoints.has(p.index));
+    const allInRange = filteredWithDist.filter(p => p.distance <= radius);
+
+    // Trigger alarm for new points
+    if (newInRange.length > 0 && !alarmActive) {
+      newInRange.forEach(p => {
+        const catKey = p.category || '_other';
+        const catInfo = categories[catKey];
+        const prefix = (catInfo && hasCategories) ? '[' + catInfo.label + '] ' : '';
+        addLog('🔔 IN REICHWEITE: ' + prefix + p.name + ' (' + formatDist(p.distance) + ')');
+      });
+      showAlarm(newInRange);
+    }
+
+    // Reset alert when leaving radius (with 10% hysteresis)
+    allWithDist.forEach(p => {
+      if (alertedPoints.has(p.index) && p.distance > radius * 1.1) {
+        alertedPoints.delete(p.index);
+        addLog('↩️ Verlassen: ' + p.name);
+      }
+    });
+
+    // Update status
+    if (allInRange.length > 0) {
+      setStatus('alert', allInRange.length + ' Punkt' + (allInRange.length > 1 ? 'e' : '') + ' in Reichweite!');
+    } else if (filteredWithDist.length > 0) {
+      const nearest = filteredWithDist[0];
+      setStatus('active', 'Nächster Punkt: ' + formatDist(nearest.distance));
+    } else {
+      setStatus('active', 'Keine Punkte im Filter');
+    }
+
+    // Render nearby list (top 10) — skip if detail panel is open (pause period)
+    if (Date.now() < renderPausedUntil) {
+      // Still update distances in existing DOM without full re-render
+      nearbyList.querySelectorAll('.nearby-item[data-point-index]').forEach(item => {
+        const idx = parseInt(item.getAttribute('data-point-index'));
+        const match = filteredWithDist.find(p => p.index === idx);
+        if (match) {
+          const distEl = item.querySelector('.dist');
+          if (distEl) distEl.textContent = formatDist(match.distance);
+          item.classList.toggle('in-range', match.distance <= radius);
+          item.classList.toggle('out-range', match.distance > radius);
+        }
+      });
+    } else {
+      renderNearby(filteredWithDist.slice(0, 10));
+    }
+  }
+
+  function renderNearby(items) {
+    nearbyList.innerHTML = items.map(p => {
+      const inRange = p.distance <= radius;
+      const metaKeys = p.meta ? Object.keys(p.meta) : [];
+      const hasData = metaKeys.length > 0;
+      const isExpanded = expandedPointIndex === p.index;
+
+      let detailHtml = '';
+      // Always build detail (we always have coordinates for the nav link)
+      detailHtml = '<div class="nearby-detail' + (isExpanded ? ' show' : '') + '" data-detail-for="' + p.index + '">';
+
+      // Google Maps navigation link (uses current position as origin if available)
+      const destCoord = p.lat + ',' + p.lng;
+      const mapsUrl = currentPos
+        ? 'https://www.google.com/maps/dir/' + currentPos.lat + ',' + currentPos.lng + '/' + destCoord
+        : 'https://www.google.com/maps/dir//' + destCoord;
+      detailHtml += '<a class="nav-link" href="' + mapsUrl + '" target="_blank" rel="noopener noreferrer">' +
+        '🧭 Route in Google Maps' +
+        '<span class="nav-arrow">↗</span>' +
+        '</a>';
+
+      // Guide-Text aus MD-Datei anzeigen & vorlesen (falls vorhanden)
+      if (findMdBlock(p.name)) {
+        detailHtml += '<button class="nav-link speak-link" data-speak-idx="' + p.index + '" style="width:100%; font-family:inherit; cursor:pointer;">' +
+          '📖 Guide-Text anzeigen &amp; vorlesen' +
+          '<span class="nav-arrow">▶</span>' +
+          '</button>' +
+          '<div class="guide-text hidden" data-guide-for="' + p.index + '"></div>';
+      }
+
+      // Metadata rows
+      if (metaKeys.length > 0) {
+        metaKeys.forEach(key => {
+          const raw = p.meta[key];
+          const rendered = renderValue(raw);
+          detailHtml += '<div class="detail-row">' +
+            '<span class="detail-label">' + escapeHtml(key) + '</span>' +
+            '<span class="detail-value">' + rendered + '</span>' +
+            '</div>';
+        });
+      }
+      detailHtml += '</div>';
+
+      // Category color dot
+      const catKey = p.category || '_other';
+      const catInfo = categories[catKey];
+      const dotColor = catInfo ? catInfo.color : '#64748b';
+      const catBadge = hasCategories
+        ? '<div class="cat-dot" style="background:' + dotColor + '" title="' + escapeHtml(catInfo ? catInfo.label : '') + '"></div>'
+        : '<div class="indicator"></div>';
+
+      return '<div class="nearby-item ' + (inRange ? 'in-range' : 'out-range') + (isExpanded ? ' expanded' : '') + '" data-point-index="' + p.index + '">' +
+        catBadge +
+        '<div class="name">' + escapeHtml(p.name) + '</div>' +
+        '<div class="dist">' + formatDist(p.distance) + '</div>' +
+        '<div class="expand-icon">▼</div>' +
+        '</div>' + detailHtml;
+    }).join('');
+
+    // Click to expand/collapse
+    nearbyList.querySelectorAll('.nearby-item[data-point-index]').forEach(item => {
+      item.addEventListener('click', (e) => {
+        // Don't toggle if clicking a link inside the detail
+        if (e.target.tagName === 'A') return;
+
+        const pointIdx = parseInt(item.getAttribute('data-point-index'));
+        const detail = nearbyList.querySelector('[data-detail-for="' + pointIdx + '"]');
+        if (!detail) return;
+
+        const wasOpen = expandedPointIndex === pointIdx;
+
+        // Close all
+        nearbyList.querySelectorAll('.nearby-detail.show').forEach(d => d.classList.remove('show'));
+        nearbyList.querySelectorAll('.nearby-item.expanded').forEach(it => it.classList.remove('expanded'));
+
+        // Toggle
+        if (!wasOpen) {
+          detail.classList.add('show');
+          item.classList.add('expanded');
+          expandedPointIndex = pointIdx;
+          renderPausedUntil = Date.now() + 10000; // pause re-render for 10s
+        } else {
+          expandedPointIndex = null;
+          renderPausedUntil = 0;
+        }
+      });
+    });
+
+    // Guide-Text-Buttons (liegen im Detail-Container = Geschwister des Eintrags,
+    // darum eigene Handler statt Delegation über den Eintrag)
+    nearbyList.querySelectorAll('.speak-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.getAttribute('data-speak-idx'));
+        const p = points[idx];
+        const b = p ? findMdBlock(p.name) : null;
+        if (!b) return;
+
+        // Bereits am Vorlesen? → Stopp
+        if (speakingIdx === idx && speechSupported && speechSynthesis.speaking) {
+          stopSpeaking();
+          return;
+        }
+
+        // Text einblenden und vorlesen
+        const gt = nearbyList.querySelector('[data-guide-for="' + idx + '"]');
+        if (gt && gt.classList.contains('hidden')) {
+          gt.innerHTML = mdToHtml(b.text);
+          gt.classList.remove('hidden');
+          gt.scrollTop = 0;
+        }
+        // Liste während des gesamten Vorlesens nicht neu rendern
+        const plain = mdToPlain(b.text);
+        renderPausedUntil = Date.now() + Math.min(300000, 10000 + plain.length * 80);
+        speakText(plain, b.title, idx);
+      });
+    });
+  }
+
+  // Close expanded detail when clicking outside (registered once)
+  document.addEventListener('click', (e) => {
+    if (expandedPointIndex !== null && !nearbyList.contains(e.target)) {
+      nearbyList.querySelectorAll('.nearby-detail.show').forEach(d => d.classList.remove('show'));
+      nearbyList.querySelectorAll('.nearby-item.expanded').forEach(it => it.classList.remove('expanded'));
+      expandedPointIndex = null;
+      renderPausedUntil = 0;
+    }
+  });
+
+  // Detect URLs and render them as clickable links, handle HTML in descriptions
+  function renderValue(text) {
+    if (!text) return '<span class="no-data">—</span>';
+
+    // Check if it contains HTML tags (from KML description CDATA)
+    if (/<[a-z][\s\S]*>/i.test(text)) {
+      // Sanitize: only allow safe tags and make links open in new tab
+      const temp = document.createElement('div');
+      temp.innerHTML = text;
+      // Make all links open in new tab
+      temp.querySelectorAll('a').forEach(a => {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      });
+      // Remove script tags
+      temp.querySelectorAll('script,style,iframe,object,embed').forEach(el => el.remove());
+      return temp.innerHTML;
+    }
+
+    // Plain text: detect and linkify URLs
+    const escaped = escapeHtml(text);
+    const urlRegex = /(https?:\/\/[^\s<>"']+)/g;
+    return escaped.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+  }
+
+  function setStatus(type, text) {
+    statusBar.className = 'status-bar status-' + type;
+    statusText.textContent = text;
+  }
+
+  function addLog(msg) {
+    const time = new Date().toLocaleTimeString('de-DE');
+    const entry = document.createElement('div');
+    entry.className = 'log-entry';
+    entry.innerHTML = '<span class="time">' + time + '</span>' + escapeHtml(msg);
+    logBox.prepend(entry);
+    // Keep max 50
+    while (logBox.children.length > 50) logBox.lastChild.remove();
+    logCard.classList.remove('hidden');
+  }
+
+  function escapeHtml(t) {
+    const d = document.createElement('div');
+    d.textContent = t;
+    return d.innerHTML;
+  }
+})();
+</script>
+</body>
+</html>
