@@ -1522,23 +1522,64 @@
   // ─── Standard-Dateien automatisch laden ───
   // URLs hier anpassen. Wichtig: Der Browser darf nur Quellen laden, die CORS
   // erlauben — GitHub (raw.githubusercontent.com / *.github.io) funktioniert
-  // zuverlässig. Google-Drive-Links werden direkt blockiert, darum versucht
-  // die App sie als Fallback über einen öffentlichen CORS-Proxy zu laden.
-  const DEFAULT_KML_URL = 'https://drive.google.com/uc?export=download&id=1HBYq4VuTCOsRbPk-yKNfZv6ISmd3JtYh';
-  const DEFAULT_MD_URL  = 'https://drive.google.com/uc?export=download&id=1pnwphYpKMI3Z5V3mejbcRrug-lP1_2cw';
-  const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+  // zuverlässig. Google Drive blockiert den Direktzugriff grundsätzlich.
+  // Drei Strategien werden nacheinander versucht:
+  //   1) Direktzugriff (klappt bei GitHub & Co.)
+  //   2) Google Drive API (nur wenn unten ein API-Key hinterlegt ist)
+  //   3) Kette öffentlicher CORS-Proxys (ohne Garantie, aber ohne Einrichtung)
+  // Standard-Dateien liegen auf GitHub (raw.githubusercontent.com erlaubt CORS —
+  // der Direktzugriff in Strategie 1 klappt damit ohne Proxy und ohne API-Key).
+  // Bei anderen Dateien: Repo / Ordner / Dateiname hier anpassen
+  // (Leerzeichen im Dateinamen als %20 schreiben).
+  const DEFAULT_KML_URL = 'https://raw.githubusercontent.com/JuGem1966/ReiseGuide/main/DefaultData/Fort%20Augustus.kml';
+  const DEFAULT_MD_URL  = 'https://raw.githubusercontent.com/JuGem1966/ReiseGuide/main/DefaultData/Fort%20Augustus.md';
+  // Nur noch als Fallback nötig, falls oben doch wieder Drive-Links eingetragen werden:
+  const GOOGLE_API_KEY = 'AIzaSyBV1kOsaNTHnXkJ-RQsfr0cEeuiOrBV4HM';
+  const CORS_PROXIES = [
+    u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+    u => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u),
+    u => 'https://corsproxy.io/?url=' + encodeURIComponent(u)
+  ];
 
-  async function fetchTextWithFallback(url) {
+  // fetch mit Timeout (damit ein hängender Proxy nicht alles blockiert)
+  function fetchWithTimeout(url, ms) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ms || 12000);
+    return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(t));
+  }
+
+  async function fetchTextWithFallback(url, label) {
+    // 1) Direkt
     try {
-      const r = await fetch(url);
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return await r.text();
-    } catch (e) {
-      addLog('↪ Direkter Zugriff blockiert (CORS) — versuche Proxy…');
-      const r = await fetch(CORS_PROXY + encodeURIComponent(url));
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return await r.text();
+      const r = await fetchWithTimeout(url);
+      if (r.ok) return await r.text();
+    } catch (e) { /* blockiert oder offline */ }
+
+    // 2) Google Drive API (wenn Key hinterlegt und Drive-Datei erkannt)
+    const driveId = (url.match(/[?&]id=([\w-]+)/) || [])[1];
+    if (driveId && GOOGLE_API_KEY) {
+      try {
+        addLog('↪ ' + label + ': versuche Google Drive API…');
+        const r = await fetchWithTimeout(
+          'https://www.googleapis.com/drive/v3/files/' + driveId + '?alt=media&key=' + GOOGLE_API_KEY);
+        if (r.ok) return await r.text();
+      } catch (e) { /* weiter mit Proxy */ }
     }
+
+    // 3) Proxy-Kette
+    for (let i = 0; i < CORS_PROXIES.length; i++) {
+      try {
+        addLog('↪ ' + label + ': versuche Proxy ' + (i + 1) + '/' + CORS_PROXIES.length + '…');
+        const r = await fetchWithTimeout(CORS_PROXIES[i](url));
+        if (r.ok) {
+          const t = await r.text();
+          // Plausibilitätscheck: HTML-Fehler-/Anmeldeseiten nicht akzeptieren
+          const head = (t || '').trimStart().toLowerCase().slice(0, 20);
+          if (t && t.length > 100 && head.indexOf('<html') !== 0 && head.indexOf('<!doctype') !== 0) return t;
+        }
+      } catch (e) { /* nächster Proxy */ }
+    }
+    throw new Error('Alle Ladeversuche fehlgeschlagen');
   }
 
   function setDropLoading(drop, labelEl, text) {
@@ -1561,12 +1602,12 @@
     kmlRetry.classList.add('hidden');
     setDropLoading(fileDrop, fileLabel, 'Lade Standard-KML…');
     try {
-      const text = await fetchTextWithFallback(DEFAULT_KML_URL);
+      const text = await fetchTextWithFallback(DEFAULT_KML_URL, 'KML');
       if (fileDrop.classList.contains('loaded')) return; // Nutzer war schneller
       applyKmlText(text, 'Standard-KML');
     } catch (e) {
       setDropFailed(fileDrop, fileLabel, 'KML-Datei auswählen', kmlRetry,
-        'Standard-KML konnte nicht geladen werden (' + e.message + ')');
+        'Standard-KML nicht ladbar (' + e.message + ') — Tipp: Datei auf GitHub legen oder API-Key hinterlegen');
     }
   }
 
@@ -1575,12 +1616,12 @@
     mdRetry.classList.add('hidden');
     setDropLoading(mdDrop, mdLabel, 'Lade Standard-Guide…');
     try {
-      const text = await fetchTextWithFallback(DEFAULT_MD_URL);
+      const text = await fetchTextWithFallback(DEFAULT_MD_URL, 'Guide');
       if (mdDrop.classList.contains('loaded')) return; // Nutzer war schneller
       applyMdText(text, 'Standard-Guide');
     } catch (e) {
       setDropFailed(mdDrop, mdLabel, 'MD-Datei auswählen', mdRetry,
-        'Standard-Guide konnte nicht geladen werden (' + e.message + ')');
+        'Standard-Guide nicht ladbar (' + e.message + ') — Tipp: Datei auf GitHub legen oder API-Key hinterlegen');
     }
   }
 
