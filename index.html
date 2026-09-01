@@ -467,6 +467,31 @@
   }
   .voice-hint em { color: var(--text); font-style: normal; font-weight: 500; }
 
+  /* Tempo-Regler für die Sprachausgabe */
+  .voice-rate {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .voice-rate .rate-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+  .voice-rate input[type=range] { flex: 1; }
+  .voice-rate .rate-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    min-width: 46px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
   /* Retry-Button für Standard-Dateien */
   .default-retry {
     display: block;
@@ -902,6 +927,11 @@
       <select id="voiceSelect" title="Stimme für die Sprachausgabe"></select>
       <button type="button" id="voiceTestBtn">🔊 Test</button>
     </div>
+    <div class="voice-rate hidden" id="voiceRateRow">
+      <span class="rate-label">Tempo</span>
+      <input type="range" id="rateSlider" min="50" max="200" step="5" value="95">
+      <span class="rate-val" id="rateVal">0.95×</span>
+    </div>
     <div class="voice-hint hidden" id="voiceHint"></div>
     <div class="speak-mode">
       <div class="card-label" style="margin: 14px 0 8px;">Ansage beim Alarm</div>
@@ -1021,6 +1051,8 @@
   let speechToken = 0; // Schutz gegen veraltete onend-Events nach cancel()
   let speakMode = 'auto'; // auto | manual | tone — Verhalten beim Alarm
   try { speakMode = localStorage.getItem('speakMode') || 'auto'; } catch(e) {}
+  let speechRate = 0.95; // Vorlese-Tempo (0.5 – 2.0)
+  try { speechRate = parseFloat(localStorage.getItem('ttsRate')) || 0.95; } catch(e) {}
   const speechSupported = 'speechSynthesis' in window;
 
   // Dynamic color palette — 12 distinct, high-contrast colors
@@ -1096,6 +1128,9 @@
   const voiceSelect = document.getElementById('voiceSelect');
   const voiceTestBtn = document.getElementById('voiceTestBtn');
   const voiceHint = document.getElementById('voiceHint');
+  const voiceRateRow = document.getElementById('voiceRateRow');
+  const rateSlider = document.getElementById('rateSlider');
+  const rateVal = document.getElementById('rateVal');
   const kmlRetry = document.getElementById('kmlRetry');
   const mdRetry = document.getElementById('mdRetry');
 
@@ -1807,6 +1842,7 @@
 
   if (speechSupported) {
     voiceRow.classList.remove('hidden');
+    voiceRateRow.classList.remove('hidden');
     populateVoiceSelect();
     speechSynthesis.addEventListener('voiceschanged', populateVoiceSelect);
     voiceSelect.addEventListener('change', () => {
@@ -1815,6 +1851,14 @@
     });
     voiceTestBtn.addEventListener('click', () => {
       speakText('So klingt die gewählte Stimme. Dunvegan Castle, Loch Ness und der Caledonian Canal sollten damit verständlich sein.');
+    });
+    // Tempo-Regler (gespeichert, wirkt sofort)
+    rateSlider.value = Math.round(speechRate * 100);
+    rateVal.textContent = speechRate.toFixed(2) + '×';
+    rateSlider.addEventListener('input', () => {
+      speechRate = rateSlider.value / 100;
+      rateVal.textContent = speechRate.toFixed(2) + '×';
+      try { localStorage.setItem('ttsRate', String(speechRate)); } catch(e) {}
     });
   }
 
@@ -1858,7 +1902,7 @@
       chunks.forEach((chunk, i) => {
         const utter = new SpeechSynthesisUtterance(chunk);
         utter.lang = lang;
-        utter.rate = 0.95;
+        utter.rate = speechRate;
         utter.pitch = 1;
         if (voice) utter.voice = voice;
         if (i === chunks.length - 1) {
